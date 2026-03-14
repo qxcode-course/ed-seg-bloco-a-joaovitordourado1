@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_17-45-47",
+            "content": "@@ -180,17 +180,17 @@\n %09%09if n1 \n-%3C\n+%3E\n  10 %7C%7C n\n@@ -191,17 +191,17 @@\n 0 %7C%7C n2 \n-%3C\n+%3E\n  10 %7B%0A%09%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-14_17-46-51",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, ganhador, aux int\n\tfmt.Scan(&n)\n\tganhador = -1\n\taux = 99999\n\tfor i := 0; i < n; i++ {\n\t\tvar n1, n2, dif int\n\t\tfmt.Scan(&n1, &n2)\n\t\tif n1 < 10 || n2 < 10 {\n\t\t\tcontinue\n\t\t}\n\t\tdif = n1 - n2\n\t\tif dif < 0 {\n\t\t\tdif *= -1\n\t\t}\n\t\tif dif < aux {\n\t\t\taux = dif\n\t\t\tganhador = i\n\t\t}\n\t}\n\tif ganhador == -1 {\n\t\tfmt.Print(\"sem ganhador\\n\")\n\t} else {\n\t\tfmt.Println(ganhador)\n\t}\n\n}\n",
+            "lines": "31"
+        }
+    ]
+}

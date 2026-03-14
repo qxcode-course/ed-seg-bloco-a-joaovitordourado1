@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_06-20-18",
+            "content": "package main \nimport(\"fmt\"\n    )\n    \n    func calcIdade(nome string, idade int ) string {\n        if idade<12{\n            return nome +\" eh crianca\\n\"\n        }  else if idade<18 {\n            return nome +\" eh jovem\\n\"\n        }  else if idade<65 {\n            return nome + \" eh adulto\\n\"\n        }  else if idade <1000{\n            return nome + \" eh idoso\\n\"\n        }  else{\n            return nome + \" eh mumia\\n\"\n        }\n    }\n    func main(){\n        var nome string\n        var idade int\n        var frase string\n        fmt.Scan(&nome,&idade)\n        frase = calcIdade(nome,idade)\n        fmt.Printf(frase)\n    }\n    ",
+            "lines": "26"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_06-23-12",
+            "content": "package main \nimport (\"fmt\"\n)\nfunc Ladrao(h int,p int, f int , d int ) string{\n    for{\n        if f == p{\n            return \"N\"\n        }\n        if f == h{\n            return \"S\"\n        }\n        f = (f+d+16)%16\n    }\n} \nfunc main(){\n    var h,p,f,d int\n    fmt.Scan(&h,&p,&f,&d)\n    valor := Ladrao(h,p,f,d)\n    fmt.Println(valor)\n}\n",
+            "lines": "20"
+        }
+    ]
+}
