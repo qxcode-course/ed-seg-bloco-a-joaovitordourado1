@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_19-46-45",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tanimais := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&animais[i])\n\t}\n\tcasais := 0\n\tfor i := 0; i < n; i++ {\n\t\tif animais[i] == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif animais[j] != 0 && animais[i]+animais[j] == 0 {\n\t\t\t\tanimais[i] = 0\n\t\t\t\tanimais[j] = 0\n\t\t\t\tcasais++\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\tfmt.Println(casais)\n}\n",
+            "lines": "29"
+        }
+    ]
+}
