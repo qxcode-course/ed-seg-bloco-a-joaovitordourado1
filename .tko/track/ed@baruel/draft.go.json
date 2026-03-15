@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_09-48-01",
+            "content": "@@ -275,19 +275,19 @@\n intf(%22%25d\n+ \n %22,\n- \n figurinh\n@@ -297,47 +297,8 @@\n i%5D)%0A\n-%09%09%09%09if i != n1 %7B%0A%09%09%09%09%09print(%22 %22)%0A%09%09%09%09%7D%0A\n %09%09%09%09\n@@ -326,17 +326,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%0A\n %09fmt.Pri\n@@ -343,17 +343,16 @@\n t(%22%5Cn%22)%0A\n-%0A\n %09for i :\n@@ -363,25 +363,24 @@\n  i %3C= n; i++\n- \n %7B%0A%09%09j := 0%0A%09\n@@ -417,17 +417,16 @@\n %5Bj%5D == i\n- \n %7B%0A%09%09%09%09br\n@@ -454,20 +454,18 @@\n %09if j ==\n- \n n1\n- \n %7B%0A%09%09%09fmt\n@@ -489,11 +489,12 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09\n %0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-15_10-05-03",
+            "content": "@@ -311,29 +311,25 @@\n = n1 %7B%0A%09%09%09%09%09\n-fmt.P\n+p\n rint(%22 %22)%0A%09%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-15_10-05-29",
+            "content": "@@ -311,10 +311,8 @@\n = n1\n--1\n  %7B%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-15_10-05-40",
+            "content": "@@ -300,17 +300,17 @@\n %0A%09%09%09%09if \n-j\n+i\n  != n1-1\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-15_10-06-09",
+            "content": "@@ -305,17 +305,18 @@\n if j != \n-i\n+n1\n -1 %7B%0A%09%09%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-15_10-09-12",
+            "content": "@@ -306,16 +306,18 @@\n f j != i\n+-1\n  %7B%0A%09%09%09%09%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-15_10-09-26",
+            "content": "@@ -298,33 +298,8 @@\n %5D)%0A%09\n-%09%09%09cont++%0A%09%09%09%09break%0A%09%09%09%7D%0A\n %09%09%09i\n@@ -310,13 +310,12 @@\n != i\n--1\n  %7B%0A\n+%09\n %09%09%09%09\n@@ -329,16 +329,43 @@\n nt(%22 %22)%0A\n+%09%09%09%09%7D%0A%09%09%09%09cont++%0A%09%09%09%09break%0A\n %09%09%09%7D%0A%09%09%7D\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-15_10-10-12",
+            "content": "@@ -168,22 +168,8 @@\n %0A%09%7D%0A\n-%09flag := true%0A\n %09for\n@@ -261,23 +261,8 @@\n %5D %7B%0A\n-%09%09%09%09if flag %7B%0A%09\n %09%09%09%09\n@@ -297,84 +297,8 @@\n i%5D)%0A\n-%09%09%09%09%09flag = false%0A%09%09%09%09%7D else %7B%0A%09%09%09%09%09fmt.Printf(%22 %25d%22, figurinhas%5Bi%5D)%0A%09%09%09%09%7D%0A%0A\n %09%09%09%09\n@@ -325,29 +325,25 @@\n %7D%0A%09%09\n-%7D%0A%09%7D%0A%09if cont == 0\n+%09if j != i-1\n  %7B%0A\n+%09%09\n %09%09fm\n@@ -355,14 +355,24 @@\n nt(%22\n-N\n+ \n %22)%0A%09\n-%7D\n+%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n %0A%09fm\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-15_17-01-04",
+            "content": "@@ -457,26 +457,24 @@\n fmt.Print(%22N\n-%5Cn\n %22)%0A%09%7D%0A%09fmt.P\n@@ -488,30 +488,8 @@\n n%22)%0A\n-%09flag = true%0A%09cont = 0\n %0A%09fo\n@@ -611,155 +611,35 @@\n %0A%09%09%09\n-if flag %7B%0A%09%09%09%09fmt.Printf(%22%25d%22, i)%0A%09%09%09%09flag = false%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Printf(%22 %25d%22, i)%0A%09%09%09%09cont++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09if cont == 0 %7B%0A%09%09fmt.Print(%22N%5Cn%22)%0A%09%7D\n+fmt.Printf(%22%25d %22, i)%0A%09%09%7D%0A%09%7D%0A\n %0A%7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-15_17-04-22",
+            "content": "@@ -682,27 +682,16 @@\n = false%0A\n-%09%09%09%09cont++%0A\n %09%09%09%7D els\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-03-15_17-05-09",
+            "content": "@@ -783,33 +783,18 @@\n Print(%22N\n+%5Cn\n %22)%0A%09%7D%0A\n-%09fmt.Print(%22%5Cn%22)%0A\n %7D%0A\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-15_17-05-59",
+            "content": "@@ -453,32 +453,34 @@\n %7B%0A%09%09fmt.Print(%22N\n+%5Cn\n %22)%0A%09%7D%0A%09fmt.Print\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-15_17-06-27",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, n1, cont int\n\tfmt.Scan(&n, &n1)\n\n\tfigurinhas := make([]int, n1)\n\tfor i := 0; i < n1; i++ {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\tflag := true\n\tfor i := 0; i < n1; i++ {\n\t\tfor j := 0; j < i; j++ {\n\t\t\tif figurinhas[i] == figurinhas[j] {\n\t\t\t\tif flag {\n\t\t\t\t\tfmt.Printf(\"%d\", figurinhas[i])\n\t\t\t\t\tflag = false\n\t\t\t\t} else {\n\t\t\t\t\tfmt.Printf(\" %d\", figurinhas[i])\n\t\t\t\t}\n\n\t\t\t\tcont++\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\tif cont == 0 {\n\t\tfmt.Print(\"N\")\n\t}\n\tfmt.Print(\"\\n\")\n\tflag = true\n\tcont = 0\n\tfor i := 1; i <= n; i++ {\n\t\tj := 0\n\t\tfor j < n1 {\n\t\t\tif figurinhas[j] == i {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tj++\n\t\t}\n\t\tif j == n1 {\n\t\t\tif flag {\n\t\t\t\tfmt.Printf(\"%d\", i)\n\t\t\t\tflag = false\n\t\t\t\tcont++\n\t\t\t} else {\n\t\t\t\tfmt.Printf(\" %d\", i)\n\t\t\t\tcont++\n\t\t\t}\n\t\t}\n\t}\n\tif cont == 0 {\n\t\tfmt.Print(\"N\")\n\t}\n\tfmt.Print(\"\\n\")\n}\n",
+            "lines": "58"
+        }
+    ]
+}

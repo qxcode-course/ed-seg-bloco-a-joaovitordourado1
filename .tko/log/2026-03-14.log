@@ -10,3 +10,11 @@
 2026-03-14 18:00:47, MOVE, v:1, k:ed@casais, mode:DOWN
 2026-03-14 19:46:43, MOVE, v:1, k:ed@casais, mode:PICK
 2026-03-14 19:46:45, EXEC, v:1, k:ed@casais, mode:FULL, rate:100, size:29
+2026-03-14 19:56:26, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-14 19:56:31, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-14 19:56:35, EXEC, v:1, k:ed@casais, mode:FULL, rate:100
+2026-03-14 19:56:37, EXEC, v:1, k:ed@casais, mode:FULL, rate:100
+2026-03-14 19:56:38, EXEC, v:1, k:ed@casais, mode:FULL, rate:100
+2026-03-14 19:56:51, SELF, v:1, k:ed@casais, self:1, rate:100, study:10, friend:nao
+2026-03-14 19:56:56, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-14 19:57:27, MOVE, v:1, k:ed@baruel, mode:DOWN
