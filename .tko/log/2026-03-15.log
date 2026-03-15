@@ -24,3 +24,10 @@
 2026-03-15 17:06:45, MOVE, v:1, k:ed@baruel, mode:BACK
 2026-03-15 17:06:58, SELF, v:1, k:ed@baruel, self:1, rate:100, study:60
 2026-03-15 17:07:09, MOVE, v:1, k:ed@gomos, mode:DOWN
+2026-03-15 17:59:03, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-15 17:59:05, EXEC, v:1, k:ed@gomos, mode:FULL, rate:0, size:28
+2026-03-15 18:00:29, SELF, v:1, k:ed@gomos, self:1, friend:in 
+2026-03-15 18:00:29, EXEC, v:1, k:ed@gomos, mode:FREE, size:30
+2026-03-15 18:00:57, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-15 18:00:59, EXEC, v:1, k:ed@gomos, mode:FULL, rate:100
+2026-03-15 18:01:25, SELF, v:1, k:ed@gomos, self:1, rate:100, study:25

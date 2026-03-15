@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_17-59-05",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n var d st\n@@ -50,17 +50,20 @@\n  string%0A\n-%09\n+    \n var n in\n@@ -64,17 +64,20 @@\n r n int%0A\n-%09\n+    \n fmt.Scan\n@@ -81,17 +81,18 @@\n can(\n-&n, &d)%0A%09\n+n ,d)%0A    \n gomo\n@@ -111,23 +111,25 @@\n int,\n- \n n*2)%0A\n-%09\n+    \n for i :=\n  0; \n@@ -116,38 +116,35 @@\n *2)%0A    for i :=\n- \n 0;\n- i \n+i\n %3C n*2; i++ %7B%0A%09%09f\n@@ -137,21 +137,26 @@\n n*2; i++\n- \n %7B%0A\n-%09%09\n+        \n fmt.Scan\n@@ -160,36 +160,28 @@\n can(\n-&%0A            gomos%5Bi%5D)%0A%09%7D%0A%09\n+gomos%5Bi%5D)%0A    %7D%0A    \n for \n@@ -192,29 +192,30 @@\n  n*2\n- - \n+-\n 1; i %3E\n- \n 1;\n- \n i--\n- \n %7B%0A\n-%09%09\n+        \n gomo\n@@ -232,20 +232,26 @@\n os%5Bi-2%5D%0A\n-%09%7D%0A%09\n+    %7D%0A    \n switch d\n@@ -253,17 +253,20 @@\n tch d %7B%0A\n-%09\n+    \n case %22L%22\n@@ -267,18 +267,24 @@\n se %22L%22:%0A\n-%09%09\n+        \n gomos%5B0%5D\n@@ -293,17 +293,20 @@\n = 1%0A\n-%09\n+    \n case %22R%22\n :%0A%09%09\n@@ -301,20 +301,27 @@\n case %22R%22\n+ \n :%0A\n-%09%09\n+        \n gomos%5B0%5D\n@@ -322,25 +322,28 @@\n mos%5B0%5D += 1%0A\n-%09\n+    \n case %22U%22:%0A%09%09\n@@ -340,18 +340,24 @@\n se %22U%22:%0A\n-%09%09\n+        \n gomos%5B1%5D\n@@ -362,17 +362,20 @@\n 1%5D -= 1%0A\n-%09\n+    \n case %22D%22\n@@ -376,18 +376,24 @@\n se %22D%22:%0A\n-%09%09\n+        \n gomos%5B1%5D\n@@ -402,12 +402,18 @@\n = 1%0A\n-%09%7D%0A%09\n+    %7D%0A    \n for \n@@ -487,10 +487,11 @@\n +1%5D)%0A%09%7D%0A\n-\n %7D%0A\n+%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-15_18-00-29",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar d string\n\tvar n int\n\tfmt.Scan(&n, &d)\n\tgomos := make([]int, n*2)\n\tfor i := 0; i < n*2; i++ {\n\t\tfmt.Scan(&\n            gomos[i])\n\t}\n\tfor i := n*2 - 1; i > 1; i-- {\n\t\tgomos[i] = gomos[i-2]\n\t}\n\tswitch d {\n\tcase \"L\":\n\t\tgomos[0] -= 1\n\tcase \"R\":\n\t\tgomos[0] += 1\n\tcase \"U\":\n\t\tgomos[1] -= 1\n\tcase \"D\":\n\t\tgomos[1] += 1\n\t}\n\tfor i := 0; i < n*2; i += 2 {\n\t\tfmt.Printf(\"%d %d\\n\", gomos[i], gomos[i+1])\n\t}\n}\n",
+            "lines": "30"
+        }
+    ]
+}
