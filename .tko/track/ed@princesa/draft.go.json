@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-25_18-14-56",
+            "content": "@@ -505,34 +505,8 @@\n 1 %7B%0A\n-%09%09imprimir(pos, pessoas)%0A%0A\n %09%09in\n@@ -595,17 +595,16 @@\n Morto = \n-(\n indiceMo\n@@ -610,33 +610,16 @@\n orto + 1\n-) %25 numeroPessoas\n %0A%09%09%7D%0A%09%09p\n@@ -742,18 +742,41 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09imprimir(pos, pessoas)%0A\n %7D\n-%0A\n %0Afunc ma\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-25_18-19-48",
+            "content": "@@ -115,16 +115,17 @@\n ; i++ %7B%0A\n+%0A\n %09%09if pes\n@@ -139,30 +139,33 @@\n  != \n-0 %7B%0A%09%09%09if i == pos\n+pos && pessoas%5Bi%5D != 0\n  %7B%0A\n-%09\n %09%09%09f\n@@ -178,17 +178,16 @@\n ntf(%22 %25d\n-%3E\n %22, pesso\n@@ -199,19 +199,36 @@\n )%0A%09%09\n-%09\n %7D else \n+if pessoas%5Bi%5D != 0 \n %7B%0A\n-%09\n %09%09%09f\n@@ -232,33 +232,34 @@\n %09%09fmt.Printf(%22 %25\n-d\n+v%3E\n %22, pessoas%5Bi%5D)%0A%09\n@@ -260,13 +260,8 @@\n %5Bi%5D)\n-%0A%09%09%09%7D\n %0A%0A%09%09\n@@ -279,10 +279,8 @@\n rint\n-ln\n (%22 %5D\n@@ -705,17 +705,16 @@\n %09%09pos = \n-(\n indiceMo\n@@ -716,37 +716,16 @@\n iceMorto\n- + 1) %25 numeroPessoas\n %0A%0A%09%09for \n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-25_18-24-59",
+            "content": "@@ -74,16 +74,17 @@\n Print(%22%5B\n+ \n %22)%0A%09for \n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-25_18-25-14",
+            "content": "@@ -482,17 +482,17 @@\n vivos %3E \n-0\n+1\n  %7B%0A%09%09imp\n@@ -514,39 +514,8 @@\n oas)\n-%0A%09%09if vivos == 1 %7B%0A%09%09%09break%0A%09%09%7D\n %0A%0A%09%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-25_18-26-20",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc imprimir(pos int, pessoas []int) {\n\tfmt.Print(\"[\")\n\tfor i := 0; i < len(pessoas); i++ {\n\t\tif pessoas[i] != 0 {\n\t\t\tif i == pos {\n\t\t\t\tfmt.Printf(\" %d>\", pessoas[i])\n\t\t\t} else {\n\t\t\t\tfmt.Printf(\" %d\", pessoas[i])\n\t\t\t}\n\n\t\t}\n\t}\n\tfmt.Println(\" ]\")\n}\n\nfunc matarproximo(numeroPessoas int, quemMata int) {\n\tpessoas := make([]int, numeroPessoas)\n\tfor i := 0; i < numeroPessoas; i++ {\n\t\tpessoas[i] = i + 1\n\t}\n\tvivos := numeroPessoas\n\tpos := quemMata - 1\n\tfor vivos > 0 {\n\t\timprimir(pos, pessoas)\n\t\tif vivos == 1 {\n\t\t\tbreak\n\t\t}\n\n\t\tindiceMorto := (pos + 1) % numeroPessoas\n\t\tfor pessoas[indiceMorto] == 0 {\n\t\t\tindiceMorto = (indiceMorto + 1) % numeroPessoas\n\t\t}\n\t\tpessoas[indiceMorto] = 0\n\t\tvivos--\n\n\t\tpos = (indiceMorto + 1) % numeroPessoas\n\n\t\tfor pessoas[pos] == 0 {\n\t\t\tpos = (pos + 1) % numeroPessoas\n\t\t}\n\t}\n}\n\nfunc main() {\n\tnumeroPessoas := 0\n\tquemMata := 0\n\tfmt.Scan(&numeroPessoas, &quemMata)\n\tmatarproximo(numeroPessoas, quemMata)\n}\n",
+            "lines": "53"
+        }
+    ]
+}
