@@ -11,3 +11,6 @@
 2026-03-25 18:24:59, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:50
 2026-03-25 18:25:14, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:50
 2026-03-25 18:26:20, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:53
+2026-03-25 18:29:23, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-25 18:29:40, SELF, v:1, k:ed@princesa, self:1, rate:100, study:30, concept:1
+2026-03-25 18:29:48, MOVE, v:1, k:ed@apagando, mode:PICK
