@@ -5,3 +5,4 @@
 2026-03-30 19:29:26, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:26
 2026-03-30 19:29:49, EXEC, v:1, k:ed@apagando, mode:FULL, size:26, fail:COMP
 2026-03-30 19:30:05, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100, size:26
+2026-03-30 19:32:32, MOVE, v:1, k:ed@manipulacao, mode:DOWN
