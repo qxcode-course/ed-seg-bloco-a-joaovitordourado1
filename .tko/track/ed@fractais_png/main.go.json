@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-12_14-07-39",
+            "content": "@@ -43,144 +43,8 @@\n %0A)%0A%0A\n-func tree(t Pen,size float64)%7B%0A%09if size %3C 20%7B%0A%09%09return%0A%09%7D%0A%09t.Walk(size)%0A%09t.Left(35)%0A%09tree(t,size*0.75)%0A%09t.Walk(-size)%0A%09t.Right(2*35)%0A%7D%0A%0A\n func\n@@ -72,16 +72,16 @@\n ) int %7B%0A\n+\n %09return \n@@ -403,24 +403,503 @@\n ma%0A%09\n-tree(*pen,200.0)\n+pen.Walk(100)             // anda 100 pixels%0A%09pen.Left(30)              // dobra 30 graus para esquerda%0A%09pen.Walk(100)             // anda 100 pixels%0A%09pen.DrawCircle(50)        // desenha um c%C3%ADrculo de raio 50%0A%09pen.Right(60)             // gira para direita 60 graus%0A%09pen.Walk(150)%0A%09for range 10 %7B%0A%09%09pen.Up()%0A%09%09pen.Walk(30) // anda sem riscar%0A%09%09pen.Down()%0A%0A%09%09pen.DrawCircle(10) //desenha um circulo pequeno%0A%0A%09%09pen.Up()%0A%09%09pen.Walk(-30) // volta sem riscar%0A%09%09pen.Down()%0A%0A%09%09pen.Left(36) // gira%0A%09%7D%0A\n %0A%09pe\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-12_14-26-40",
+            "content": "@@ -55,17 +55,16 @@\n e(t Pen,\n- \n size flo\n@@ -68,17 +68,16 @@\n float64)\n- \n %7B%0A%09if si\n@@ -83,17 +83,16 @@\n ize %3C 20\n- \n %7B%0A%09%09retu\n@@ -123,33 +123,32 @@\n eft(35)%0A%09tree(t,\n- \n size*0.75)%0A%09t.Wa\n@@ -171,32 +171,10 @@\n ht(2\n- * 35)%0A%09tree(t, size*0.7\n+*3\n 5)%0A%7D\n@@ -545,17 +545,16 @@\n ee(*pen,\n- \n 200.0)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-12_14-27-29",
+            "content": "@@ -146,16 +146,31 @@\n e*0.75)%0A\n+%09t.Walk(-size)%0A\n %09t.Right\n@@ -198,31 +198,16 @@\n e*0.75)%0A\n-%09t.Walk(-size)%0A\n %7D%0A%0Afunc \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-12_14-29-42",
+            "content": "@@ -146,17 +146,16 @@\n e*0.75)%0A\n-%0A\n %09t.Right\n@@ -159,10 +159,14 @@\n ght(\n-70\n+2 * 35\n )%0A%09t\n@@ -186,21 +186,8 @@\n .75)\n-%0A%0A%09t.Left(35)\n %0A%09t.\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-12_14-30-56",
+            "content": "@@ -315,16 +315,14 @@\n Pen(\n-10\n+5\n 00, \n-10\n+5\n 00) \n@@ -463,15 +463,14 @@\n ion(\n+2\n 5\n-0\n 0, \n-10\n+5\n 00) \n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-12_14-32-30",
+            "content": "@@ -83,17 +83,18 @@\n  size %3C \n-5\n+20\n  %7B%0A%09%09ret\n@@ -324,16 +324,17 @@\n  1000)  \n+ \n // cria \n@@ -401,17 +401,16 @@\n 5, 0, 0)\n- \n      // \n@@ -526,17 +526,16 @@\n ding(90)\n- \n         \n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-12_14-33-01",
+            "content": "@@ -83,18 +83,17 @@\n  size %3C \n-10\n+5\n  %7B%0A%09%09ret\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-12_14-33-21",
+            "content": "@@ -119,25 +119,25 @@\n e)%0A%09t.Left(3\n-8\n+5\n )%0A%09tree(t, s\n@@ -157,17 +157,17 @@\n .Right(7\n-6\n+0\n )%0A%09tree(\n@@ -194,9 +194,9 @@\n ft(3\n-8\n+5\n )%0A%09t\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-12_14-34-25",
+            "content": "@@ -83,17 +83,18 @@\n  size %3C \n-5\n+10\n  %7B%0A%09%09ret\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-12_14-34-39",
+            "content": "@@ -48,96 +48,170 @@\n unc \n-circle(p *\n+tree(t \n Pen,\n+ \n size \n-int,n int)%7B%0A%09if n ==0%7B%0A%09%09for range 6%7B%0A%09%09%09p.%0A%09%09%7D%0A%09%7D%0A%09for range 6%7B%0A%0A%09%7D%0A\n+float64) %7B%0A%09if size %3C 5 %7B%0A%09%09return%0A%09%7D%0A%09t.Walk(size)%0A%09t.Left(38)%0A%09tree(t, size*0.75)%0A%0A%09t.Right(76)%0A%09tree(t, size*0.75)%0A%0A%09t.Left(38)%0A%09t.Walk(-size)\n %0A%7D%0A%0A\n@@ -314,18 +314,19 @@\n Pen(\n-5\n+10\n 00, \n-5\n+10\n 00)\n- \n   //\n@@ -399,16 +399,17 @@\n 5, 0, 0)\n+ \n      // \n@@ -464,15 +464,16 @@\n ion(\n-2\n 5\n+0\n 0, \n-25\n+100\n 0) /\n@@ -506,16 +506,101 @@\n , y 500%0A\n+%09pen.SetHeading(90)         // coloca o pincel apontando para cima%0A%09tree(*pen, 200.0)\n %0A%09pen.Sa\n@@ -610,13 +610,11 @@\n NG(%22\n-circl\n+tre\n e.pn\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-12_15-26-09",
+            "content": "@@ -62,44 +62,81 @@\n Pen,\n- \n size \n-float64) %7B%0A%09p.DrawCircle(size)\n+int,n int)%7B%0A%09if n ==0%7B%0A%09%09for range 6%7B%0A%09%09%09p.%0A%09%09%7D%0A%09%7D%0A%09for range 6%7B%0A%0A%09%7D\n %0A%0A%7D%0A\n@@ -433,27 +433,8 @@\n 500%0A\n-%09circle(pen, 100.0)\n %0A%09pe\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-12_15-28-13",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc circle(p *Pen, size float64) {\n\tp.DrawCircle(size)\n\n}\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(250, 250) // move o pincel para x 250, y 500\n\tcircle(pen, 100.0)\n\tpen.SavePNG(\"circle.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "24"
+        }
+    ]
+}

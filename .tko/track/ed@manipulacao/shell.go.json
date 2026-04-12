@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-03_16-07-11",
+            "content": "@@ -869,33 +869,8 @@\n t %7B%0A\n-%09res := slices.Clone(vet)\n %0A%09sl\n@@ -882,19 +882,19 @@\n Reverse(\n-res\n+vet\n )%0A%09retur\n@@ -887,35 +887,35 @@\n se(vet)%0A%09return \n-res\n+vet\n %0A%7D%0A%0Afunc unique(\n",
+            "lines": "151"
+        },
+        {
+            "label": "2026-04-03_17-33-13",
+            "content": "@@ -1139,22 +1139,17 @@\n %5Dint %7B%0A%09\n-vistos\n+m\n  := make\n@@ -1149,36 +1149,35 @@\n := make(map%5Bint%5D\n-bool\n+int\n )%0A%09res := %5B%5Dint%7B\n@@ -1174,16 +1174,22 @@\n  := \n+make(\n %5B%5Dint\n-%7B%7D%0A\n+, 0)\n %0A%09fo\n@@ -1216,20 +1216,29 @@\n %7B%0A%09%09\n-if vistos%5Bv%5D\n+m%5Bv%5D++%0A%09%09if m%5Bv%5D == 2\n  %7B%0A%09\n@@ -1264,39 +1264,8 @@\n  v)%0A\n-%09%09%7D else %7B%0A%09%09%09vistos%5Bv%5D = true%0A\n %09%09%7D%0A\n",
+            "lines": "151"
+        },
+        {
+            "label": "2026-04-03_17-35-05",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"slices\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc getMen(vet []int) []int {\n\tmen := make([]int, 0, len(vet))\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] > 0 {\n\t\t\tmen = append(men, vet[i])\n\t\t}\n\t}\n\treturn men\n}\n\nfunc getCalmWomen(vet []int) []int {\n\twoman := make([]int, 0, len(vet))\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] < 0 && vet[i] > -10 {\n\t\t\twoman = append(woman, vet[i])\n\t\t}\n\t}\n\treturn woman\n}\n\nfunc sortVet(vet []int) []int {\n\tslices.Sort(vet)\n\treturn vet\n}\n\nfunc sortStress(vet []int) []int {\n\tcounts := make(map[int]int)\n\tfinal := make([]int, 0, len(vet))\n\n\tfor _, n := range vet {\n\t\tv := n\n\t\tif n < 0 {\n\t\t\tv = -n\n\t\t\tcounts[v]++\n\t\t}\n\t\tfinal = append(final, v)\n\t}\n\n\tslices.Sort(final)\n\n\tfor i, v := range final {\n\t\tif counts[v] > 0 {\n\t\t\tfinal[i] = -v\n\t\t\tcounts[v]--\n\t\t}\n\t}\n\n\treturn final\n}\n\nfunc reverse(vet []int) []int {\n\tres := slices.Clone(vet)\n\tslices.Reverse(res)\n\treturn res\n}\n\nfunc unique(vet []int) []int {\n\tm := make(map[int]bool)\n\tres := make([]int, 0)\n\tfor _, v := range vet {\n\t\tif !m[v] {\n\t\t\tm[v] = true\n\t\t\tres = append(res, v)\n\t\t}\n\t}\n\treturn res\n}\n\nfunc repeated(vet []int) []int {\n\tvistos := make(map[int]bool)\n\tres := []int{}\n\n\tfor _, v := range vet {\n\t\tif vistos[v] {\n\t\t\tres = append(res, v)\n\t\t} else {\n\t\t\tvistos[v] = true\n\t\t}\n\t}\n\treturn res\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n",
+            "lines": "153"
+        }
+    ]
+}

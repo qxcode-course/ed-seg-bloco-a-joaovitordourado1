@@ -4,43 +4,91 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"slices"
 	"strconv"
 	"strings"
 )
 
 func getMen(vet []int) []int {
-	_ = vet
-	return nil
+	men := make([]int, 0, len(vet))
+	for i := 0; i < len(vet); i++ {
+		if vet[i] > 0 {
+			men = append(men, vet[i])
+		}
+	}
+	return men
 }
 
 func getCalmWomen(vet []int) []int {
-	_ = vet
-	return nil
+	woman := make([]int, 0, len(vet))
+	for i := 0; i < len(vet); i++ {
+		if vet[i] < 0 && vet[i] > -10 {
+			woman = append(woman, vet[i])
+		}
+	}
+	return woman
 }
 
 func sortVet(vet []int) []int {
-	_ = vet
-	return nil
+	slices.Sort(vet)
+	return vet
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+	counts := make(map[int]int)
+	final := make([]int, 0, len(vet))
+
+	for _, n := range vet {
+		v := n
+		if n < 0 {
+			v = -n
+			counts[v]++
+		}
+		final = append(final, v)
+	}
+
+	slices.Sort(final)
+
+	for i, v := range final {
+		if counts[v] > 0 {
+			final[i] = -v
+			counts[v]--
+		}
+	}
+
+	return final
 }
 
 func reverse(vet []int) []int {
-	_ = vet
-	return nil
+	res := slices.Clone(vet)
+	slices.Reverse(res)
+	return res
 }
 
 func unique(vet []int) []int {
-	_ = vet
-	return nil
+	m := make(map[int]bool)
+	res := make([]int, 0)
+	for _, v := range vet {
+		if !m[v] {
+			m[v] = true
+			res = append(res, v)
+		}
+	}
+	return res
 }
 
 func repeated(vet []int) []int {
-	_ = vet
-	return nil
+	vistos := make(map[int]bool)
+	res := []int{}
+
+	for _, v := range vet {
+		if vistos[v] {
+			res = append(res, v)
+		} else {
+			vistos[v] = true
+		}
+	}
+	return res
 }
 
 func main() {
@@ -103,4 +151,3 @@ func str2vet(s string) []int {
 	}
 	return vet
 }
-
