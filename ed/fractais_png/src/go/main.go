@@ -5,20 +5,27 @@ import (
 	"math/rand"
 )
 
-func pent(p *Pen, size float64) {
-	if size < 1 {
+func square(p *Pen, size float64) {
+	if size < 4 {
 		return
 	}
-	for range 5 {
-		p.Down()
+	p.Up()
+	p.Walk(size / 2)
+	p.Right(90)
+	p.Walk(size / 2)
+	p.Down()
+	for range 4 {
+		p.Right(90)
+		square(p, size*0.45)
 		p.Walk(size)
-
-		pent(p, size*0.33)
-
-		p.Up()
-		p.Walk(-size)
-		p.Right(72)
 	}
+	p.Up()
+
+	p.Walk(-size / 2)
+	p.Left(90)
+	p.Walk(-size / 2)
+
+	p.Down()
 }
 
 func randInt(min, max int) int {
@@ -26,14 +33,15 @@ func randInt(min, max int) int {
 }
 
 func main() {
-	size := 333.3
+	size := 500.0
 	pen := NewPen(1000, 1000) // cria um canvas de 500 de largura por 500 de altura
 	pen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho
 	pen.SetPosition(500, 500) // move o pincel para x 250, y 500
-	pen.SetHeading(270)
+	pen.SetHeading(90)
 	pen.SetLineWidth(1)
 	pen.Down()
-	pent(pen, size)
-	pen.SavePNG("pent.png")
+	square(pen, size)
+
+	pen.SavePNG("square.png")
 	fmt.Println("PNG file created successfully.")
 }

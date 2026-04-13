@@ -16,9 +16,9 @@ sources:
   tasks: null
 expanded:
 - ed@basic
-- ed@rec
 - ed@map_set
 - ed@backtrack
+- ed@rec
 flags:
   inbox: all
   panel: help

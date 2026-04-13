@@ -97,8 +97,93 @@
         },
         {
             "label": "2026-04-12_21-25-40",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc pent(p *Pen, size float64) {\n\tif size < 1 {\n\t\treturn\n\t}\n\tfor range 5 {\n\t\tp.Down()\n\t\tp.Walk(size)\n\n\t\tpent(p, size*0.33)\n\n\t\tp.Up()\n\t\tp.Walk(-size)\n\t\tp.Right(72)\n\t}\n}\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc main() {\n\tsize := 333.3\n\tpen := NewPen(1000, 1000) // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(500, 500) // move o pincel para x 250, y 500\n\tpen.SetHeading(270)\n\tpen.SetLineWidth(1)\n\tpen.Down()\n\tpent(pen, size)\n\tpen.SavePNG(\"pent.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -44,22 +44,20 @@\n )%0A%0Afunc \n-square\n+pent\n (p *Pen,\n@@ -111,17 +111,17 @@\n r range \n-4\n+5\n  %7B%0A%09%09p.D\n@@ -145,16 +145,15 @@\n ze)%0A\n+%0A\n %09%09\n-square\n+pent\n (p, \n@@ -162,16 +162,56 @@\n ze*0.33)\n+%0A%0A%09%09p.Up()%0A%09%09p.Walk(-size)%0A%09%09p.Right(72)\n %0A%09%7D%0A%7D%0A%0Af\n@@ -537,10 +537,11 @@\n ing(\n-45\n+270\n )%0A%09p\n@@ -576,14 +576,12 @@\n ()%0A%09\n-square\n+pent\n (pen\n",
             "lines": "39"
+        },
+        {
+            "label": "2026-04-12_21-48-44",
+            "content": "@@ -44,20 +44,22 @@\n )%0A%0Afunc \n-pent\n+square\n (p *Pen,\n@@ -86,17 +86,17 @@\n  size %3C \n-3\n+1\n  %7B%0A%09%09ret\n@@ -113,17 +113,17 @@\n r range \n-5\n+4\n  %7B%0A%09%09p.D\n@@ -147,15 +147,16 @@\n ze)%0A\n-%0A\n %09%09\n-pent\n+square\n (p, \n@@ -167,49 +167,9 @@\n *0.3\n-8)%0A%0A%09%09p.Up()%0A%09%09p.Walk(-size)%0A%09%09p.Right(72\n+3\n )%0A%09%7D\n@@ -500,11 +500,10 @@\n ing(\n-270\n+45\n )%0A%09p\n@@ -534,20 +534,22 @@\n Down()%0A%09\n-pent\n+square\n (pen, si\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-12_21-49-07",
+            "content": "@@ -1,635 +1,112 @@\n-package main%0A%0Aimport (%0A%09%22fmt%22%0A%09%22math/rand%22%0A)%0A%0Afunc square(p *Pen, size float64) %7B%0A%09if size %3C 1 %7B%0A%09%09return%0A%09%7D%0A%09for range 4 %7B%0A%09%09p.Down()%0A%09%09p.Walk(size)%0A%09%09square(p, size*0.33)%0A%09%7D%0A%7D%0A%0Afunc randInt(min, max int) int %7B%0A%09return min + rand.Intn(max-min+1)%0A%7D%0A%0Afunc main() %7B%0A%09size := 333.3%0A%09pen := NewPen(1000, 1000) // cria um canvas de 500 de largura por 500 de altura%0A%09pen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho%0A%09pen.SetPosition(500, 500) // move o pincel para x 250, y 500%0A%09pen.SetHeading(45)%0A%09pen.SetLineWidth(1)%0A%09pen.Down()%0A%09square(pen, size)%0A%09pen.SavePNG(%22square.png%22)%0A%09fmt.Println(%22PNG file created successfully.%22)%0A%7D\n+@@ -84,17 +84,17 @@%0A  size %253C %0A-1%0A+3%0A  %257B%250A%2509%2509ret%0A@@ -160,17 +160,17 @@%0A size*0.3%0A-3%0A+8%0A )%250A%250A%2509%2509p.U\n %0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-04-12_21-50-39",
+            "content": "@@ -86,17 +86,17 @@\n  size %3C \n-2\n+1\n  %7B%0A%09%09ret\n@@ -117,16 +117,27 @@\n nge 4 %7B%0A\n+%09%09p.Down()%0A\n %09%09p.Walk\n@@ -170,22 +170,8 @@\n 33)%0A\n-%09%09p.Right(90)%0A\n %09%7D%0A%7D\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-12_22-13-22",
+            "content": "@@ -442,16 +442,16 @@\n ion(\n-333, 333\n+500, 500\n ) //\n@@ -499,17 +499,18 @@\n Heading(\n-0\n+45\n )%0A%09pen.S\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-12_22-14-18",
+            "content": "@@ -107,248 +107,76 @@\n %09%7D%0A%09\n-p.Up()%0A%09p.Walk(size / 2)%0A%09p.Right(90)%0A%09p.Walk(size / 2)%0A%09p.Right(90)%0A%09p.Down()%0A%09for range 4 %7B%0A%09%09p.Walk(size)%0A%09%09square(p, size*0.33)%0A%09%09p.Right(90)%0A%09%7D%0A%09p.Up()%0A%09p.Right(90)%0A%09p.Walk(size / 2)%0A%09p.Left(90)%0A%09p.Walk(size / 2)%0A%09p.Left(180)%0A%09p.Down()\n+for range 4 %7B%0A%09%09p.Walk(size)%0A%09%09square(p, size*0.33)%0A%09%09p.Right(90)%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-12_22-17-24",
+            "content": "@@ -614,16 +614,16 @@\n ion(\n-500, 500\n+333, 333\n ) //\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-12_22-18-37",
+            "content": "@@ -231,17 +231,18 @@\n  size*0.\n-5\n+33\n )%0A%09%09p.Ri\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-12_22-20-02",
+            "content": "@@ -86,17 +86,17 @@\n  size %3C \n-5\n+2\n  %7B%0A%09%09ret\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-12_22-20-28",
+            "content": "@@ -86,17 +86,16 @@\n  size %3C \n-1\n 5 %7B%0A%09%09re\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-12_22-20-38",
+            "content": "@@ -206,92 +206,18 @@\n %09%09p.\n-Up()%0A%09%09p.Walk(size/4)%0A%0A%09%09p.Down()%0A%09%09p.Walk(size/2)%0A%09%09%0A%09%09p.Up()%0A%09%09p.Walk(size/4)%0A%0A%0A%09%09\n+Walk(size)\n %0A%09%09s\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-12_22-25-43",
+            "content": "@@ -206,18 +206,92 @@\n %09%09p.\n-Walk(size)\n+Up()%0A%09%09p.Walk(size/4)%0A%0A%09%09p.Down()%0A%09%09p.Walk(size/2)%0A%09%09%0A%09%09p.Up()%0A%09%09p.Walk(size/4)%0A%0A%0A%09%09\n %0A%09%09s\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-12_22-28-09",
+            "content": "@@ -86,16 +86,17 @@\n  size %3C \n+1\n 5 %7B%0A%09%09re\n@@ -445,13 +445,13 @@\n  := \n-400.0\n+333.3\n %0A%09pe\n@@ -466,15 +466,15 @@\n Pen(\n-2\n+1\n 000, \n-2\n+1\n 000)\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-12_22-30-42",
+            "content": "@@ -472,18 +472,16 @@\n 0, 2000)\n-  \n  // cria\n@@ -554,18 +554,16 @@\n  0)     \n-  \n // muda \n@@ -613,16 +613,14 @@\n ion(\n-10\n+5\n 00, \n-10\n+5\n 00) \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-12_22-33-21",
+            "content": "@@ -259,16 +259,28 @@\n %09p.Up()%0A\n+%09p.Right(90)\n %0A%09p.Walk\n@@ -272,33 +272,32 @@\n ght(90)%0A%09p.Walk(\n--\n size / 2)%0A%09p.Lef\n@@ -310,17 +310,16 @@\n %09p.Walk(\n--\n size / 2\n@@ -320,16 +320,28 @@\n ze / 2)%0A\n+%09p.Left(180)\n %0A%09p.Down\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-12_22-56-15",
+            "content": "@@ -159,16 +159,29 @@\n ze / 2)%0A\n+%09p.Right(90)%0A\n %09p.Down(\n@@ -201,24 +201,25 @@\n 4 %7B%0A%09%09p.\n-Right(90\n+Walk(size\n )%0A%09%09squa\n@@ -238,25 +238,24 @@\n .5)%0A%09%09p.\n-Walk(size\n+Right(90\n )%0A%09%7D%0A%09p.\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-12_22-57-08",
+            "content": "@@ -86,17 +86,17 @@\n  size %3C \n-4\n+5\n  %7B%0A%09%09ret\n@@ -217,17 +217,16 @@\n  size*0.\n-4\n 5)%0A%09%09p.W\n@@ -405,17 +405,17 @@\n size := \n-5\n+4\n 00.0%0A%09pe\n@@ -430,19 +430,21 @@\n Pen(\n-1\n+2\n 000, \n-1\n+2\n 000)\n+  \n  // \n@@ -521,16 +521,18 @@\n  0)     \n+ \n+ \n // muda \n@@ -582,14 +582,16 @@\n ion(\n-5\n+10\n 00, \n-5\n+10\n 00) \n@@ -641,17 +641,16 @@\n Heading(\n-9\n 0)%0A%09pen.\n@@ -677,16 +677,16 @@\n .Down()%0A\n+\n %09square(\n@@ -696,17 +696,16 @@\n , size)%0A\n-%0A\n %09pen.Sav\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-12_22-58-55",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc square(p *Pen, size float64) {\n\tif size < 4 {\n\t\treturn\n\t}\n\tp.Up()\n\tp.Walk(size / 2)\n\tp.Right(90)\n\tp.Walk(size / 2)\n\tp.Down()\n\tfor range 4 {\n\t\tp.Right(90)\n\t\tsquare(p, size*0.45)\n\t\tp.Walk(size)\n\t}\n\tp.Up()\n\n\tp.Walk(-size / 2)\n\tp.Left(90)\n\tp.Walk(-size / 2)\n\n\tp.Down()\n}\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc main() {\n\tsize := 500.0\n\tpen := NewPen(1000, 1000) // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(500, 500) // move o pincel para x 250, y 500\n\tpen.SetHeading(90)\n\tpen.SetLineWidth(1)\n\tpen.Down()\n\tsquare(pen, size)\n\n\tpen.SavePNG(\"square.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "47"
         }
     ]
 }
