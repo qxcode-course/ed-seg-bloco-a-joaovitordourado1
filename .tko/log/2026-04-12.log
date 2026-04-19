@@ -166,3 +166,6 @@
 2026-04-12 22:56:15, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:144
 2026-04-12 22:57:08, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:143
 2026-04-12 22:58:55, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:144
+2026-04-12 22:58:55, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-12 22:58:53, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-12 23:00:08, MOVE, v:1, k:ed@fractais_png, mode:EDIT
