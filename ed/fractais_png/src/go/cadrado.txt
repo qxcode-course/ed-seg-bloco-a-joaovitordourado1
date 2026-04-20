@@ -1,0 +1,65 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func cadrado(p *Pen, size float64) {
+
+	if size < 3 {
+		return
+	}
+	for j := range 3 {
+		for i := range 3 {
+			if i == 1 && j == 1 {
+				p.Up()
+				p.Walk(size)
+				p.Down()
+				continue
+			}
+			cadrado(p, size*0.33)
+			p.Walk(size)
+			p.Right(90)
+			p.Walk(size)
+			p.Right(90)
+			p.Walk(size)
+			p.Right(90)
+			p.Walk(size)
+			p.Right(90)
+			p.Walk(size)
+
+		}
+		p.Up()
+		p.Right(90)
+		p.Walk(size)
+		p.Right(90)
+		p.Walk(size * 3)
+		p.Right(180)
+		p.Down()
+
+	}
+	p.Up()
+	p.Right(270)
+	p.Walk(size * 3)
+	p.Right(90)
+	p.Down()
+}
+
+func randInt(min, max int) int {
+	return min + rand.Intn(max-min+1)
+}
+
+func main() {
+	size := 1000.0 / 3
+	pen := NewPen(1000, 1000) // cria um canvas de 500 de largura por 500 de altura
+	pen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho
+	pen.SetPosition(0, 0)     // move o pincel para x 250, y 500
+	pen.SetHeading(0)
+	pen.SetLineWidth(1)
+	pen.Down()
+	cadrado(pen, size)
+
+	pen.SavePNG("cadrado.png")
+	fmt.Println("PNG file created successfully.")
+}

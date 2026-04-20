@@ -1,0 +1,39 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func trigo(p *Pen, size float64) {
+	if size < 1 {
+		return
+	}
+	for i := 0; i < 4; i++ {
+		p.Walk(size)
+		p.Right(35)
+		trigo(p,size/3)
+		p.Left(70)
+		trigo(p,size/3)
+		p.Right(35)
+	}
+	p.Walk(-4*size)
+}
+
+func randInt(min, max int) int {
+	return min + rand.Intn(max-min+1)
+}
+
+func main() {
+	size := 150.0
+	pen := NewPen(1000, 1000) // cria um canvas de 500 de largura por 500 de altura
+	pen.SetRGB(255, 0, 0)    // muda a cor do pincel para vermelho
+	pen.SetPosition(500, 900)  // move o pincel para x 250, y 500
+	pen.SetHeading(90)
+	pen.SetLineWidth(1)
+	pen.Down()
+	trigo(pen, size)
+
+	pen.SavePNG("trigo.png")
+	fmt.Println("PNG file created successfully.")
+}
