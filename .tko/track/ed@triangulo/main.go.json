@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-20_17-09-58",
+            "content": "@@ -95,216 +95,249 @@\n  %7B%0A%09\n-if len(vet) == 1 %7B%0A%09%09return%0A%09%7D%0A%09tam := len(vet)%0A%09aux := make(%5B%5Dint, 0, tam-1)%0A%09for i := 0; i %3C tam-1; i++ %7B%0A%09%09aux = append(aux, vet%5Bi%5D+vet%5Bi+1%5D)%0A%09%7D%0A%09processa(aux)%0A%09// fmt.Println(%22%5B %22 + Join(vet, %22 %22) + %22 %5D%22)\n+fmt.Println(%22%5B %22 + Join(vet, %22 %22) + %22 %5D%22)%0A%09_ = vet;%0A%09// 1. defina o ponto de parada%0A%09// 2. monte o vetor auxiliar com os resultados das somas%0A%09// 3. chame recursivamente a fun%C3%A7%C3%A3o processa para o vetor auxiliar%0A%09// 4. imprima o vetor original\n %0A%7D%0A%0A\n@@ -629,29 +629,8 @@\n vet)\n-%0A%0A%09fmt.Print(%22teste%22)\n %0A%7D%0A%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-20_21-43-20",
+            "content": "@@ -255,16 +255,19 @@\n a(aux)%0A%09\n+// \n fmt.Prin\n@@ -592,16 +592,37 @@\n ssa(vet)\n+%0A%0A%09fmt.Print(%22teste%22)\n %0A%7D%0A%0Afunc\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-20_21-43-33",
+            "content": "@@ -279,19 +279,19 @@\n  + Join(\n-aux\n+vet\n , %22 %22) +\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-20_21-43-42",
+            "content": "@@ -575,17 +575,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%0A\n %09process\n@@ -594,26 +594,8 @@\n et)%0A\n-%09fmt.Println(vet)%0A\n %7D%0A%0Af\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-20_21-44-38",
+            "content": "@@ -608,21 +608,11 @@\n tln(\n-%22%5B %22,vet,%22 %5D%22\n+vet\n )%0A%7D%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-20_21-45-02",
+            "content": "@@ -612,28 +612,13 @@\n %22%5B %22\n- + Join(vet, %22 %22) + \n+,vet,\n %22 %5D%22\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-20_21-45-52",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc processa(vet []int) {\n\tif len(vet) == 1 {\n\t\treturn\n\t}\n\ttam := len(vet)\n\taux := make([]int, 0, tam-1)\n\tfor i := 0; i < tam-1; i++ {\n\t\taux = append(aux, vet[i]+vet[i+1])\n\t}\n\tprocessa(aux)\n\tfmt.Println(\"[ \" + Join(aux, \" \") + \" ]\")\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tvet := []int{}\n\tfor _, part := range parts {\n\t\tif value, err := strconv.Atoi(part); err == nil {\n\t\t\tvet = append(vet, value)\n\t\t}\n\t}\n\n\tprocessa(vet)\n\tfmt.Println(\"[ \" + Join(vet, \" \") + \" ]\")\n}\n\nfunc Join[T any](v []T, sep string) string {\n\tif len(v) == 0 {\n\t\treturn \"\"\n\t}\n\ts := \"\"\n\tfor i, x := range v {\n\t\tif i > 0 {\n\t\t\ts += sep\n\t\t}\n\t\ts += fmt.Sprintf(\"%v\", x)\n\t}\n\treturn s\n}\n",
+            "lines": "54"
+        }
+    ]
+}
