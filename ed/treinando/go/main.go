@@ -9,8 +9,10 @@ import (
 )
 
 func tostr(vet []int) string {
-	_ = vet
-	return ""
+	if len(vet) ==1{
+		return ""
+	}
+	
 }
 
 func tostrrev(vet []int) string {

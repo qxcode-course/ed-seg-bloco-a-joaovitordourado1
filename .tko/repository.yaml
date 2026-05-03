@@ -22,14 +22,17 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
 - ed@vector
+- ed@list
+- ed@rec
+- ed@map_set
+- ed@basic
 flags:
   inbox: all
   panel: help
-  show_panel: 'true'
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@triangulo
-selected_index: 4
+selected: ed@setbuild
+selected_index: 45

@@ -1,0 +1,144 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-02_18-23-21",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -126,13 +126,8 @@\n Set(\n-c int\n ) *S\n@@ -161,17 +161,18 @@\n e(%5B%5Dint,\n-c\n+ 0\n )%7D%0A%7D%0A%0Afu\n@@ -908,16 +908,19 @@\n it%22:%0A%09%09%09\n+// \n value, _\n@@ -949,16 +949,19 @@\n %5B1%5D)%0A%09%09%09\n+// \n v = NewS\n",
+            "lines": "82"
+        },
+        {
+            "label": "2026-05-02_18-26-16",
+            "content": "@@ -133,17 +133,17 @@\n  NewSet(\n-v\n+c\n  int) *S\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-02_18-26-34",
+            "content": "@@ -181,37 +181,10 @@\n int,\n-v),%0A%09size: 0,%0A%09capacity: v,%0A%09\n+c)\n %7D%0A%7D%0A\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-02_18-28-24",
+            "content": "@@ -703,16 +703,19 @@\n in)%0A%0A%0A%0A%09\n+// \n v := New\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-05-02_18-28-55",
+            "content": "@@ -699,16 +699,19 @@\n .Stdin)%0A\n+%0A%0A%0A\n %09v := Ne\n@@ -1124,12 +1124,8 @@\n w%22:%0A\n-%09%09%09%0A\n %09%09ca\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-05-02_19-21-32",
+            "content": "@@ -491,17 +491,17 @@\n = (high \n-+\n+-\n  low)/2 \n@@ -534,19 +534,17 @@\n %09return \n-mid\n+v\n %0A%09%09%7D%0A%09%09i\n@@ -607,24 +607,24 @@\n d -1%0A%09%09%7D%0A%09%7D%0A\n+\n %09return -1%0A%7D\n@@ -628,188 +628,8 @@\n 1%0A%7D%0A\n-func (s *Set) String() string %7B%0A%09strs := make(%5B%5Dstring, s.size)%0A%09for i := 0; i %3C s.size; i++ %7B%0A%09%09strs%5Bi%5D = strconv.Itoa(s.data%5Bi%5D)%0A%09%7D%0A%09return %22%5B%22 + strings.Join(strs, %22 %22) + %22%5D%22%0A%7D%0A\n func\n@@ -1121,44 +1121,11 @@\n w%22:%0A\n-            fmt.Println(v.String())%0A\n+%09%09%09\n %0A%09%09c\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-05-02_19-25-52",
+            "content": "@@ -214,458 +214,8 @@\n %7D%0A%7D%0A\n-func (s *Set) insert(n int, va int) error %7B%0A%09if s.size == s.capacity %7B%0A%09%09s.Reserve(s.capacity*2)%0A%09%7D%0A%09na := s.Insert(n)%0A%09for i := s.size; i %3E na; i-- %7B%0A%09%09s.data%5Bi%5D = s.data%5Bi-1%5D%0A%09%7D%0A%09s.size++%0A%09s.data%5Bna%5D = va%0A%09return nil%0A%7D%0Afunc (s *Set) Insert(v int) int %7B%0A%09low := 0 %0A%09high:=s.size-1%0A%09for low%3C=high%7B%0A%09%09mid := (high + low)/2 %0A%09%09if s.data%5Bmid%5D== v %7B%0A%09%09%09return mid%0A%09%09%7D%0A%09%09if s.data%5Bmid%5D %3C v%7B%0A%09%09%09low = mid +1%0A%09%09%7Delse%7B%0A%09%09%09high = mid -1%0A%09%09%7D%0A%09%7D%0A%09return low%0A%7D%0A%0A\n %0Afun\n@@ -659,19 +659,20 @@\n ring %7B%0A%09\n-jap\n+strs\n  := make\n@@ -723,19 +723,20 @@\n i++ %7B%0A%09%09\n-jap\n+strs\n %5Bi%5D = st\n@@ -791,11 +791,12 @@\n oin(\n-jap\n+strs\n , %22 \n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-05-02_20-56-14",
+            "content": "@@ -1649,16 +1649,19 @@\n rt%22:%0A%09%09%09\n+// \n for _, p\n@@ -1688,16 +1688,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09value, \n@@ -1730,28 +1730,11 @@\n %0A%09%09%09\n-%09v.Insert(value)%0A%09%09%09\n+// \n %7D%0A%09%09\n",
+            "lines": "121"
+        },
+        {
+            "label": "2026-05-02_20-58-23",
+            "content": "@@ -458,19 +458,23 @@\n t(v int)\n+ int\n  %7B%0A\n-\n %09low := \n@@ -525,32 +525,73 @@\n (high + low)/2 %0A\n+%09%09if s.data%5Bmid%5D== v %7B%0A%09%09%09return mid%0A%09%09%7D%0A\n %09%09if s.data%5Bmid%5D\n@@ -647,27 +647,21 @@\n %09%7D%0A%09\n-%09s.insert(v,low)%0A%09%7D\n+%7D%0A%09return low\n %0A%7D%0A%0A\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-05-02_21-06-27",
+            "content": "@@ -310,16 +310,35 @@\n y*2)%0A%09%7D%0A\n+%09na := s.Insert(n)%0A\n %09for i :\n@@ -351,17 +351,17 @@\n ze; i %3E \n-v\n+n\n a; i-- %7B\n@@ -412,15 +412,16 @@\n ata%5B\n-v\n+n\n a%5D = \n-n\n+va\n %0A%09re\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-05-02_21-07-12",
+            "content": "@@ -238,21 +238,18 @@\n (n int, \n-index\n+va\n  int) er\n@@ -332,21 +332,18 @@\n ze; i %3E \n-index\n+va\n ; i-- %7B%0A\n@@ -378,35 +378,30 @@\n %0A%09s.\n-data%5Bindex%5D = n%0A%09s.size++%0A%09\n+size++%0A%09s.data%5Bva%5D = n\n %0A%09re\n@@ -445,29 +445,8 @@\n ) %7B%0A\n-%09if !s.Contains(v)%7B%0A%09\n %09low\n@@ -602,118 +602,10 @@\n %0A%09%7D%0A\n-%09%7D%0A%09%0A%7D%0A%0Afunc (s *Set) Contains(v int) bool%7B%0A%09k:=s.binarySearch(v)%0A%09if k ==-1%7B%0A%09%09return false%0A%09%7D%0A%09return true%0A\n %7D\n+%0A\n %0A%0Afu\n",
+            "lines": "118"
+        },
+        {
+            "label": "2026-05-02_21-30-07",
+            "content": "@@ -1950,24 +1950,27 @@\n ntains%22:%0A%09%09%09\n+// \n value, _ := \n@@ -1996,29 +1996,8 @@\n 1%5D)%0A\n-%09%09%09v.Contains(value)%0A\n %09%09ca\n",
+            "lines": "129"
+        },
+        {
+            "label": "2026-05-02_21-36-19",
+            "content": "@@ -520,38 +520,32 @@\n gh%7B%0A%09%09mid :=\n- low +\n  (high \n--\n++\n  low)/2 %0A%09%09i\n@@ -1019,22 +1019,16 @@\n d :=\n- low +\n  (high \n--\n++\n  low\n",
+            "lines": "130"
+        },
+        {
+            "label": "2026-05-02_21-41-00",
+            "content": "@@ -617,21 +617,16 @@\n 1%0A%09%09%7D%0A%09%09\n-%0A%09%7D%0A%09\n s.insert\n@@ -636,16 +636,19 @@\n low)%0A%09%7D%0A\n+%09%7D%0A\n %09%0A%7D%0A%0Afun\n",
+            "lines": "130"
+        },
+        {
+            "label": "2026-05-02_21-42-52",
+            "content": "@@ -64,18 +64,8 @@\n gs%22%0A\n-%09%22errors%22%0A\n )%0A%0At\n@@ -937,343 +937,8 @@\n y%0A%7D%0A\n-func (s *Set) erase(id int) error %7B%0A%09if id %3E= s.size %7B%0A%09%09return errors.New(%22index out of range%22)%0A%09%7D%0A%09for i := id; i %3C s.size-1; i++ %7B%0A%09%09s.data%5Bi%5D = s.data%5Bi+1%5D%0A%09%7D%0A%09s.size--%0A%09return nil%0A%7D%0Afunc (s *Set) Erase(num int ) bool%7B%0A%09if s.binarySearch(num) == -1%7B%0A%09%09return false%0A%09%7D%0A%09indva := s.binarySearch(num)%0A%0A%09s.erase(indva)%0A%09return true %0A%7D%0A\n func\n@@ -1904,24 +1904,27 @@\n %22erase%22:%0A%09%09%09\n+// \n value, _ := \n@@ -1950,26 +1950,8 @@\n 1%5D)%0A\n-%09%09%09v.erase(value)%0A\n %09%09ca\n",
+            "lines": "131"
+        },
+        {
+            "label": "2026-05-03_13-01-19",
+            "content": "@@ -1682,17 +1682,16 @@\n (jap, %22 \n-,\n %22) + %22%5D%22\n",
+            "lines": "152"
+        },
+        {
+            "label": "2026-05-03_13-01-51",
+            "content": "@@ -1681,18 +1681,18 @@\n n(jap, %22\n-,\n  \n+,\n %22) + %22%5D%22\n",
+            "lines": "152"
+        },
+        {
+            "label": "2026-05-03_13-02-03",
+            "content": "@@ -2367,28 +2367,16 @@\n %5B1%5D)%0A%09%09%09\n-fmt.Println(\n v.Contai\n@@ -2384,17 +2384,16 @@\n s(value)\n-)\n %0A%09%09case \n",
+            "lines": "152"
+        },
+        {
+            "label": "2026-05-03_13-03-27",
+            "content": "@@ -979,16 +979,80 @@\n error %7B%0A\n+%09if id %3E= s.size %7B%0A%09%09return errors.New(%22index out of range%22)%0A%09%7D%0A\n %09for i :\n",
+            "lines": "152"
+        },
+        {
+            "label": "2026-05-03_13-09-13",
+            "content": "@@ -61,16 +61,24 @@\n rings%22%0A%09\n+%22errors%22\n %0A)%0A%0Atype\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-05-03_13-09-23",
+            "content": "@@ -1101,24 +1101,34 @@\n %0A%09if\n-!s.Contains(num)\n+ s.binarySearch(num) == -1\n %7B%0A%09%09\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-05-03_13-16-59",
+            "content": "@@ -2212,17 +2212,17 @@\n %5D)%0A%09%09%09v.\n-E\n+e\n rase(val\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-05-03_13-18-11",
+            "content": "@@ -64,18 +64,8 @@\n gs%22%0A\n-%09%22errors%22%0A\n %09%0A)%0A\n@@ -975,57 +975,8 @@\n r %7B%0A\n-%09if id == -1%7B%0A%09%09errors.New(%22index not found%22)%0A%09%7D%0A\n %09for\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-05-03_13-22-07",
+            "content": "@@ -1009,21 +1009,21 @@\n rs.New(%22\n-value\n+index\n  not fou\n@@ -1180,19 +1180,20 @@\n %7B%0A%09%09\n-s.erase(-1)\n+return false\n %0A%09%7D%0A\n",
+            "lines": "153"
+        },
+        {
+            "label": "2026-05-03_13-23-12",
+            "content": "@@ -978,17 +978,67 @@\n t) error\n-%7B\n+ %7B%0A%09if id == -1%7B%0A%09%09errors.New(%22value not found%22)%0A%09%7D\n %0A%09for i \n@@ -1172,36 +1172,35 @@\n ins(num)%7B%0A%09%09\n-return false\n+s.erase(-1)\n %0A%09%7D%0A%09indva :\n@@ -2268,20 +2268,16 @@\n %5B1%5D)%0A%09%09%09\n-if !\n v.Erase(\n@@ -2286,49 +2286,8 @@\n lue)\n-%7B%0A%09%09%09%09fmt.Println(%22index not found%22)%0A%09%09%09%7D\n %0A%09%09c\n",
+            "lines": "153"
+        },
+        {
+            "label": "2026-05-03_13-25-10",
+            "content": "@@ -60,16 +60,25 @@\n trings%22%0A\n+%09%22errors%22\n %0A%09%0A)%0A%0Aty\n",
+            "lines": "152"
+        },
+        {
+            "label": "2026-05-03_13-25-17",
+            "content": "@@ -2247,21 +2247,21 @@\n rintln(%22\n-value\n+index\n  not fou\n",
+            "lines": "152"
+        },
+        {
+            "label": "2026-05-03_13-25-31",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n\n\t\n)\n\ntype Set struct {\n\tdata []int\n\tsize int\n\tcapacity int\n\n}\n\nfunc NewSet(v int) *Set {\n\treturn &Set{data: make([]int,v),\n\tsize: 0,\n\tcapacity: v,\n\t}\n}\nfunc (s *Set) insert(n int, index int) error {\n\tif s.size == s.capacity {\n\t\ts.Reserve(s.capacity*2)\n\t}\n\tfor i := s.size; i > index; i-- {\n\t\ts.data[i] = s.data[i-1]\n\t}\n\ts.data[index] = n\n\ts.size++\n\t\n\treturn nil\n}\nfunc (s *Set) Insert(v int) {\n\tif !s.Contains(v){\n\t\tlow := 0 \n\thigh:=s.size-1\n\tfor low<=high{\n\t\tmid := low + (high - low)/2 \n\t\tif s.data[mid] < v{\n\t\t\tlow = mid +1\n\t\t}else{\n\t\t\thigh = mid -1\n\t\t}\n\t\t\n\t}\n\ts.insert(v,low)\n\t}\n\t\n}\n\nfunc (s *Set) Contains(v int) bool{\n\tk:=s.binarySearch(v)\n\tif k ==-1{\n\t\treturn false\n\t}\n\treturn true\n}\n\nfunc (s *Set) Reserve(newCapacity int) {\n\tnewData := make([]int, newCapacity)\n\tfor i := 0; i < s.size; i++ {\n\t\tnewData[i] = s.data[i]\n\t}\n\ts.data = newData\n\ts.capacity = newCapacity\n}\nfunc (s *Set) erase(id int) error{\n\tfor i := id; i < s.size-1; i++ {\n\t\ts.data[i] = s.data[i+1]\n\t}\n\ts.size--\n\treturn nil\n}\nfunc (s *Set) Erase(num int ) bool{\n\tif!s.Contains(num){\n\t\treturn false\n\t}\n\tindva := s.binarySearch(num)\n\n\ts.erase(indva)\n\treturn true \n}\nfunc (s *Set) binarySearch(v int) int{\n\tlow := 0 \n\thigh:=s.size-1\n\tfor low<=high{\n\t\tmid := low + (high - low)/2 \n\t\tif s.data[mid]== v {\n\t\t\treturn mid\n\t\t}\n\t\tif s.data[mid] < v{\n\t\t\tlow = mid +1\n\t\t}else{\n\t\t\thigh = mid -1\n\t\t}\n\t}\n\treturn -1\n}\nfunc (s *Set) String() string {\n\tjap := make([]string, s.size)\n\tfor i := 0; i < s.size; i++ {\n\t\tjap[i] = strconv.Itoa(s.data[i])\n\t}\n\treturn \"[\" + strings.Join(jap, \", \") + \"]\"\n}\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\tv := NewSet(0)\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tv = NewSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range parts[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tv.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n            fmt.Println(v.String())\n\n\t\tcase \"erase\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tif !v.Erase(value){\n\t\t\t\tfmt.Println(\"value not found\")\n\t\t\t}\n\t\tcase \"contains\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tfmt.Println(v.Contains(value))\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "152"
+        }
+    ]
+}
