@@ -22,17 +22,13 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@vector
 - ed@list
-- ed@rec
-- ed@map_set
-- ed@basic
 flags:
   inbox: all
-  panel: help
+  panel: skills
   show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@setbuild
-selected_index: 45
+selected: ed@editorint
+selected_index: 14
