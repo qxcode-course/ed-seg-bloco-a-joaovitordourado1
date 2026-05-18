@@ -2,3 +2,18 @@
 2026-05-18 13:50:20, EXEC, v:1, k:ed@treinando, mode:FULL, rate:16
 2026-05-18 13:50:20, EXEC, v:1, k:ed@treinando, mode:FULL, rate:16
 2026-05-18 13:50:20, EXEC, v:1, k:ed@treinando, mode:FULL, rate:16
+2026-05-18 13:51:06, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-05-18 13:54:44, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-05-18 13:54:45, EXEC, v:1, k:ed@treinando, mode:FULL, rate:33, size:114
+2026-05-18 13:54:35, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-05-18 13:59:42, EXEC, v:1, k:ed@treinando, mode:FULL, rate:50, size:118
+2026-05-18 13:59:41, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-05-18 14:01:01, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:118
+2026-05-18 14:01:21, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:118
+2026-05-18 14:01:18, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-05-18 14:07:36, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:118
+2026-05-18 14:07:57, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:118
+2026-05-18 14:07:56, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-05-18 14:19:11, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:135
+2026-05-18 14:19:07, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-05-18 14:21:53, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:136

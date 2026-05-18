@@ -22,11 +22,12 @@ sources:
   quests: null
   tasks: null
 expanded:
+- ed@backtrack
 - ed@rec
 flags:
   inbox: all
   panel: skills
-  show_panel: 'false'
+  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
