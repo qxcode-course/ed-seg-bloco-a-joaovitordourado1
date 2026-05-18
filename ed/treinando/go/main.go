@@ -8,11 +8,26 @@ import (
 	"strings"
 )
 
-func tostr(vet []int) string {
-	if len(vet) ==1{
+
+
+func Join(slice []int, sep string) string {
+	if len(slice) == 0 {
 		return ""
 	}
-	
+	if len(slice) == 1 {
+		return fmt.Sprintf("%d", slice[0])
+	}
+	return fmt.Sprintf("%d%s", slice[0], sep) + Join(slice[1:], sep)
+}
+func tostr(vet []int) string {
+	if len(vet) == 0 {
+		return "[]"
+	}
+	if len(vet) == 1 {
+		return fmt.Sprintf("[%d]", vet[0])
+	}
+
+	return "[" +Join(vet,", ")+ "]"
 }
 
 func tostrrev(vet []int) string {
