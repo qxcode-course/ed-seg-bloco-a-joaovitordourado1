@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-19_16-51-58",
+            "content": "@@ -150,53 +150,8 @@\n  )%7B%0A\n-    if eh_primo(atual,2)%7B%0A        cont++%0A    \n     \n@@ -196,24 +196,66 @@\n     \n+%7D%0A\n     \n-return%0A    %7D\n+if eh_primo(atual,2)%7B%0A        enes(n,cont+1,atual+1)\n %0A   \n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-05-19_16-54-01",
+            "content": "@@ -259,21 +259,21 @@\n  %7D%0A    %7D\n-%0A    \n+else%7B\n %0A       \n@@ -298,16 +298,17 @@\n +1)%0A    \n+%7D\n %0A%0A%7D%0Afunc\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-19_16-56-30",
+            "content": "@@ -222,13 +222,9 @@\n     \n-fmt.P\n+p\n rint\n@@ -265,16 +265,20 @@\n  %7D%0A    %0A\n+    \n     enes\n@@ -294,16 +294,22 @@\n tual+1)%0A\n+    %0A%0A\n %7D%0Afunc e\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-05-19_16-57-13",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    cont :=0\n    n:=0\n    fmt.Scan(&n)\n    div :=2\n    enes(n,cont,div)\n}\nfunc enes(n int, cont int,atual int ){\n    if eh_primo(atual,2){\n        cont++\n        if n == cont {\n        fmt.Println(atual)\n        return\n    }\n    }\n    \n    enes(n,cont,atual+1)\n}\nfunc eh_primo(x int, div int) bool {\n\tif x < 2 {\n\t\treturn false\n\t}\n\tif div == x {\n\t\treturn true\n\t}\n\tif x%div == 0 {\n\t\treturn false\n\t}\n\tif div > x {\n\t\treturn true\n\t}\n\treturn eh_primo(x, div+1)\n}\n",
+            "lines": "35"
+        }
+    ]
+}

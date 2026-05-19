@@ -71,7 +71,7 @@ func mult(vet []int) int {
 // var rec func(v []int) (int, int)
 // para fazer uma recursão que retorna valor e índice
 func min(vet []int) int {
-	// Se o slice for vazio, o teste espera -1
+
 	if len(vet) == 0 {
 		return -1
 	}

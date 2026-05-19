@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-19_15-53-26",
+            "content": "@@ -250,201 +250,117 @@\n  != \n-'#'%7B%0A%09%09return %0A%09%7D%0A%09grid%5Bl%5D%5Bc%5D = 'o'%0A%09// chame a recurs%C3%A3o para todos os 4 vizinhos%0A%09burnTrees(grid, l-1, c) %0A    burnTrees(grid, l+1, c) %0A    burnTrees(grid, l, c-1) %0A    burnTrees(grid, l, c+1)\n+%0A%09// queime a arvore colocando o caractere 'o' na posi%C3%A7%C3%A3o atual%0A%09// chame a recurs%C3%A3o para todos os 4 vizinhos\n %0A%7D%0A%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-19_15-56-36",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tnl := len(grid)\n\tnc := len(grid[0])\n\tif l < 0 || l >= nl || c < 0 || c >= nc {\n    return\n}\n\t// se o elemento atual n\u00e3o for uma arvore, retorne\n\tif grid[l][c] != '#'{\n\t\treturn \n\t}\n\tgrid[l][c] = 'o'\n\t// chame a recurs\u00e3o para todos os 4 vizinhos\n\tburnTrees(grid, l-1, c) \n    burnTrees(grid, l+1, c) \n    burnTrees(grid, l, c-1) \n    burnTrees(grid, l, c+1)\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(grid [][]rune) {\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "48"
+        }
+    ]
+}
