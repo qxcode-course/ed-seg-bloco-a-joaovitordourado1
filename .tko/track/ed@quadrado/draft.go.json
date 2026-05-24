@@ -1,0 +1,99 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_22-58-22",
+            "content": "@@ -181,10 +181,40 @@\n rado(n)%0A\n+%09fmt.Println(%22Hello, World!%22)%0A\n %7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-05-23_22-58-31",
+            "content": "@@ -105,18 +105,16 @@\n 2 = %25v%22 \n-,n\n ,n) %0A%09%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-23_22-58-45",
+            "content": "@@ -116,34 +116,11 @@\n n) %0A\n-        return k %0A\n %09%7D%0A\n-    %0A\n     \n@@ -130,21 +130,10 @@\n urn \n-quadrado(n-1)\n+k \n %0A%7D%0Af\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-23_23-00-14",
+            "content": "@@ -141,44 +141,8 @@\n     \n-k += fmt.Sprintf(%22%25v %5E2 = %25v%22 ,n,n) \n %0A   \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-23_23-00-34",
+            "content": "@@ -55,28 +55,8 @@\n g %7B%0A\n-%0A%0A    println(%22oi%22)%0A\n %09k :\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-23_23-01-07",
+            "content": "@@ -61,19 +61,21 @@\n     \n-return \n+println(\n %22oi%22\n+)\n %0A%09k \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-23_23-01-30",
+            "content": "@@ -95,22 +95,14 @@\n 1 %7B%0A\n-        return\n+%09%09k +=\n  fmt\n@@ -117,32 +117,44 @@\n (%22%25v\n+ \n %5E2 = %25v\n-%5Cn%22, n, n*\n+%22 ,n,\n n)\n+ \n %0A    \n+    return k %0A%09\n %7D%0A  \n@@ -263,56 +263,18 @@\n     \n-resultado := quadrado(n)%0A    fmt.Print(resultado\n+quadrado(n\n )%0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-23_23-03-50",
+            "content": "@@ -52,16 +52,33 @@\n ring %7B%0A%0A\n+%0A    return %22oi%22%0A\n %09k := %22%22\n@@ -103,11 +103,15 @@\n     \n-k+=\n+return \n fmt.\n@@ -123,16 +123,28 @@\n tf(%22\n-1\n+%25v\n %5E2 = \n-1%22\n+%25v%5Cn%22, n, n*n\n )%0A  \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-23_23-05-09",
+            "content": "@@ -159,21 +159,8 @@\n n) %0A\n-    return k%0A\n     \n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-05-23_23-05-20",
+            "content": "@@ -85,16 +85,28 @@\n      k+=\n+fmt.Sprintf(\n %221%5E2 = 1\n@@ -106,16 +106,17 @@\n 1%5E2 = 1%22\n+)\n %0A    %7D%0A \n@@ -155,16 +155,29 @@\n  ,n,n) %0A\n+    return k%0A\n     retu\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-05-23_23-06-35",
+            "content": "@@ -99,25 +99,8 @@\n  1%22%0A\n-        return k%0A\n     \n@@ -167,17 +167,16 @@\n do(n-1)%0A\n-%0A\n %7D%0Afunc m\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-05-23_23-06-44",
+            "content": "@@ -115,14 +115,8 @@\n rn k\n- +%22%5Cn%22\n %0A   \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-23_23-07-01",
+            "content": "@@ -131,24 +131,45 @@\n %0A   \n+ k +=\n  fmt.\n-P\n+Sp\n rint\n+f\n (%22\n-oi%22)\n+%25v %5E2 = %25v%22 ,n,n) \n %0A   \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-23_23-07-48",
+            "content": "@@ -132,69 +132,22 @@\n     \n-k+=\n fmt.\n-Sp\n+P\n rint\n-f\n (%22\n-%25v%5E2 = %25v%5E2 + 2*%25v + 1 = %25v*%25v%22,n,n-1,n-1,n,n\n+oi%22\n )%0A  \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-23_23-11-25",
+            "content": "@@ -202,19 +202,16 @@\n  return \n-k +\n quadrado\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-23_23-12-34",
+            "content": "@@ -132,95 +132,10 @@\n     \n-p:=fmt.Sprintf(%22%25v%5E2 = %25v%5E2 + 2*%25v + 1 = ?%5Cn%22,n,n-1,n-1)%0A    prox:=quadrado(n-1)%0A    r:\n+k+\n =fmt\n@@ -191,17 +191,16 @@\n -1,n,n)%0A\n-%0A\n     retu\n@@ -206,19 +206,25 @@\n urn \n-p + prox +r\n+k +quadrado(n-1)%0A\n %0A%7D%0Af\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-23_23-17-25",
+            "content": "@@ -254,16 +254,19 @@\n v + 1 = \n+%25v*\n %25v%22,n,n-\n@@ -272,17 +272,17 @@\n -1,n-1,n\n-*\n+,\n n)%0A%0A    \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-23_23-17-54",
+            "content": "@@ -256,18 +256,16 @@\n + 1 = %25v\n-%5Cn\n %22,n,n-1,\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-23_23-18-02",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc quadrado(n int) string {\n\n\tk := \"\"\n\tif n == 1 {\n        k+=\"1^2 = 1\"\n        return k +\"\\n\"\n    }\n    p:=fmt.Sprintf(\"%v^2 = %v^2 + 2*%v + 1 = ?\\n\",n,n-1,n-1)\n    prox:=quadrado(n-1)\n    r:=fmt.Sprintf(\"%v^2 = %v^2 + 2*%v + 1 = %v\\n\",n,n-1,n-1,n*n)\n\n    return p + prox +r\n}\nfunc main() {\n\tn := 0\n\tfmt.Scan(&n)\n    resultado := quadrado(n)\n    fmt.Print(resultado)\n}\n",
+            "lines": "23"
+        }
+    ]
+}
