@@ -15,8 +15,7 @@ func exist(grid [][]byte, word string) bool {
 		if i == len(word){
 			return true
 		}
-		if r < 0 || r >= rM || c < 0 || c >= cM {
-			fmt.Println("entrei")
+		if r < 0 || r >= rM || c < 0 || c >= cM ||grid[r][c]!= word[i]{
             return false
 			
         }
