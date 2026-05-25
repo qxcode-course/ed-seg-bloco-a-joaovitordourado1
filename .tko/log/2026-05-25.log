@@ -1,0 +1,16 @@
+2026-05-25 09:49:56, MOVE, v:1, k:ed@wordsearch, mode:DOWN
+2026-05-25 09:49:56, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-25 09:49:56, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-25 09:49:56, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-25 09:49:56, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-25 09:50:05, MOVE, v:1, k:ed@bitcoin, mode:EDIT
+2026-05-25 10:09:30, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-25 10:12:59, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-25 10:16:37, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-05-25 10:16:38, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0, size:85
+2026-05-25 10:16:40, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0
+2026-05-25 10:17:33, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75, size:88
+2026-05-25 10:18:45, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75
+2026-05-25 10:19:10, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75, size:89
+2026-05-25 10:19:24, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:90
+2026-05-25 10:19:23, MOVE, v:1, k:ed@wordsearch, mode:EDIT

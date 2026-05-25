@@ -19,10 +19,11 @@ sources:
   writeable: false
   quests: null
 expanded:
+- ed@vector
 - ed@map_set
+- ed@backtrack
 - ed@list
 - ed@rec
-- ed@vector
 flags:
   inbox: all
   panel: skills
@@ -30,5 +31,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fib1
-selected_index: 30
+selected: ed@wordsearch
+selected_index: 36
