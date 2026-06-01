@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_11-41-12",
+            "content": "package main\nimport \"fmt\"\nfunc subset(l[]int,alvo int,soma int, i int) bool{\n    if soma == alvo{\n        return true\n    }\n    if soma > alvo {\n        return false\n    }\n    if i == len(l){\n        return false\n    }\n    return subset(l, alvo, soma+l[i], i+1) || subset(l, alvo, soma, i+1)\n}\nfunc main() {\n    n:=0\n    alvo:=0\n    fmt.Scan(&n,&alvo)\n    valores := make([]int, n)\n    for i := 0; i < n; i++ {\n        fmt.Scan(&valores[i])\n    }\n    resultado := subset(valores, alvo, 0, 0)\n    fmt.Println(resultado)\n}\n",
+            "lines": "25"
+        }
+    ]
+}

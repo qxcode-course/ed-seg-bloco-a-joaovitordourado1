@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-28_13-16-56",
+            "content": "@@ -207,10 +207,8 @@\n  %3C n\n-*2\n ; i+\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-05-28_13-17-15",
+            "content": "@@ -127,18 +127,16 @@\n (%5B%5Dint,n\n-*2\n )       \n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-05-28_13-18-00",
+            "content": "package main\nimport \"fmt\"\n\n                                            \nfunc main() {\n    n:=0\n    fmt.Scan(&n)\n    vec:= make([]int,n*2)                                                     \n    for i := 0; i < n*2; i++ {\n        fmt.Scan(&vec[i])\n    }\n    fmt.Print(vec)\n    \n}\n",
+            "lines": "14"
+        }
+    ]
+}

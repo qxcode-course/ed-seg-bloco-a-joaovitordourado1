@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_13-59-01",
+            "content": "@@ -206,25 +206,10 @@\n  %7B%0A%09\n-fmt.Println(%22oi%22)\n+//\n %0A%09_ \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-25_13-59-24",
+            "content": "@@ -206,387 +206,46 @@\n  %7B%0A%09\n-if len(grid) == 0 %7C%7C len(grid%5B0%5D) == 0 %7B%0A%09%09return 0%0A%09%7D%0A%09n := 0%0A%09r := len(grid)%0A%09c\n+fmt.Println(%22oi%22)%0A%09_\n  := \n-len(grid%5B0%5D)%0A%09for i := 0; i %3C r; i++ %7B%0A%09%09for k := 0; k %3C c; k++ %7B%0A%09%09%09if grid%5Br%5D%5Bc%5D == '1' %7B%0A%09%09%09%09n++%0A%09%09%09%09backtrack(grid, i, k)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return n%0A%7D%0Afunc backtrack(l%5B%5D%5B%5Dbyte, c,r int )%7B%0A%09l%5Br%5D%5Bc%5D = '0'%0A%09backtrack(l, r-1, c)  %0A%09backtrack(l, r+1, c) %0A%09backtrack(l, r, c-1) %0A%09backtrack(l, r, c+1) \n+grid%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-25_15-19-44",
+            "content": "@@ -478,92 +478,8 @@\n  )%7B%0A\n-%09if r %3C 0 %7C%7C c %3C 0 %7C%7C r %3E= len(l) %7C%7C c %3E= len(l%5B0%5D) %7C%7C l%5Br%5D%5Bc%5D == '0' %7B%0A%09%09return%0A%09%7D%0A\n %09l%5Br\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-25_15-20-12",
+            "content": "@@ -368,12 +368,12 @@\n rid%5B\n-i%5D%5Bk\n+r%5D%5Bc\n %5D ==\n@@ -467,11 +467,11 @@\n te, \n-r,c\n+c,r\n  int\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-05-25_15-21-18",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\nfunc numIslands(grid [][]byte) int {\n\tif len(grid) == 0 || len(grid[0]) == 0 {\n\t\treturn 0\n\t}\n\tn := 0\n\tr := len(grid)\n\tc := len(grid[0])\n\tfor i := 0; i < r; i++ {\n\t\tfor k := 0; k < c; k++ {\n\t\t\tif grid[i][k] == '1' {\n\t\t\t\tn++\n\t\t\t\tbacktrack(grid, i, k)\n\t\t\t}\n\t\t}\n\t}\n\treturn n\n}\nfunc backtrack(l[][]byte, r,c int ){\n\tif r < 0 || c < 0 || r >= len(l) || c >= len(l[0]) || l[r][c] == '0' {\n\t\treturn\n\t}\n\tl[r][c] = '0'\n\tbacktrack(l, r-1, c)  \n\tbacktrack(l, r+1, c) \n\tbacktrack(l, r, c-1) \n\tbacktrack(l, r, c+1) \n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tgrid := make([][]byte, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []byte(scanner.Text())\n\t}\n\tresult := numIslands(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "53"
+        }
+    ]
+}
