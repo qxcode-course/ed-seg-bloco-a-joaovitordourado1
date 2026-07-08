@@ -19,15 +19,23 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@basic
 - ed@linear
+- ed@backtrack
+- ed@bfs
 - ed@tree
+- ed@list
+- ed@map_set
+- ed@vector
+- ed@rec
+- ed@dfs
 flags:
   inbox: all
   panel: skills
-  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
+audit:
+  enabled: true
+  interval_seconds: null
 lang: go
-selected: ed@basic
-selected_index: 0
+selected: ed@caminho
+selected_index: 90

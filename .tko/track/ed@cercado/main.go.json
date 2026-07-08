@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-07_10-24-45",
+            "content": "@@ -114,16 +114,25 @@\n yte) %7B%0A%09\n+_ = board\n %0A%7D%0A%0A// N\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-07-07_11-16-00",
+            "content": "@@ -45,778 +45,81 @@\n %0A)%0A%0A\n-func dfs(board %5B%5D%5B%5Dbyte, r, c int) %7B%0A%09rows := len(board)%0A%09columns := len(board%5B0%5D)%0A%09if r %3E 0 %7C%7C r %3E= rows %7C%7C c %3C 0 %7C%7C c%3E= columns%7C%7C board%5Br%5D%5Bc%5D != 'O' %7B%0A%09%09return%0A%09%7D%0A%09board%5Br%5D%5Bc%5D= 'K'%0A%09%0A%09dfs(board, r+1,c)%0A%09dfs(board, r,c+1)%0A%09dfs(board, r-1,c)%0A%09dfs(board, r+1,c-1)%0A%0A%0A%09%0A%7D%0A%0A// N%C3%83O ALTERE A ASSINATURA DA FUN%C3%87%C3%83O solve%0Afunc solve(board %5B%5D%5B%5Dbyte) %7B%0A%09if len(board) == 0%7C%7Clen(board%5B0%5D) == 0%7B%0A%09%09return%0A%09%7D%0A%09rows := len(board)%0A%09columns := len(board%5B0%5D)%0A%0A%09for r := 0;r %3C rows; r++%7B%0A%09%09dfs(board, r, 0)%0A        dfs(board, r, columns-1)%0A%09%7D%0A%09for c:= 0; c%3C columns; c++%7B%0A%09%09dfs(board, rows, c)%0A%09%09dfs(board, rows, c-1)%0A%09%7D%0A%09for r:=0; r %3C rows; r++%7B%0A%09%09for c:= 0; c  %3C columns; c++%7B%0A%09%09%09if board%5Br%5D%5Bc%5D == 'O'%7B%0A%09%09%09%09board%5Br%5D%5Bc%5D ='X'%0A%09%09%09%7Delse if board%5Br%5D%5Bc%5D== 'K'%7B%0A%09%09%09%09board%5Br%5D%5Bc%5D ='O'%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+// N%C3%83O ALTERE A ASSINATURA DA FUN%C3%87%C3%83O solve%0Afunc solve(board %5B%5D%5B%5Dbyte) %7B%0A%09\n %0A%7D%0A%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-07-07_11-48-32",
+            "content": "@@ -130,17 +130,18 @@\n )%0A%09if r \n-%3C\n+%3E \n 0 %7C%7C r %3E\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-07-07_11-52-19",
+            "content": "@@ -261,12 +261,12 @@\n d, r\n--1\n ,c\n++1\n )%0A%09d\n@@ -268,36 +268,36 @@\n 1)%0A%09dfs(board, r\n+-1\n ,c\n-+1\n )%0A%09dfs(board, r,\n@@ -295,16 +295,18 @@\n board, r\n++1\n ,c-1)%0A%0A%0A\n@@ -606,17 +606,20 @@\n (board, \n-0\n+rows\n , c)%0A%09%09d\n@@ -632,18 +632,16 @@\n rd, rows\n--1\n , c-1)%0A%09\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-07-07_11-53-34",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc dfs(board [][]byte, r, c int) {\n\trows := len(board)\n\tcolumns := len(board[0])\n\tif r <0 || r >= rows || c < 0 || c>= columns|| board[r][c] != 'O' {\n\t\treturn\n\t}\n\tboard[r][c]= 'K'\n\t\n\tdfs(board, r+1,c)\n\tdfs(board, r-1,c)\n\tdfs(board, r,c+1)\n\tdfs(board, r,c-1)\n\n\n\t\n}\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tif len(board) == 0||len(board[0]) == 0{\n\t\treturn\n\t}\n\trows := len(board)\n\tcolumns := len(board[0])\n\n\tfor r := 0;r < rows; r++{\n\t\tdfs(board, r, 0)\n        dfs(board, r, columns-1)\n\t}\n\tfor c:= 0; c< columns; c++{\n\t\tdfs(board, 0, c)\n\t\tdfs(board, rows-1, c-1)\n\t}\n\tfor r:=0; r < rows; r++{\n\t\tfor c:= 0; c  < columns; c++{\n\t\t\tif board[r][c] == 'O'{\n\t\t\t\tboard[r][c] ='X'\n\t\t\t}else if board[r][c]== 'K'{\n\t\t\t\tboard[r][c] ='O'\n\t\t\t}\n\t\t}\n\t}\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "68"
+        }
+    ]
+}

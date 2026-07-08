@@ -1,0 +1,37 @@
+2026-06-06 21:24:25, MOVE, v:1, k:ed@soma, mode:DOWN
+2026-06-06 21:28:46, MOVE, v:1, k:ed@soma, mode:PICK
+2026-06-06 21:28:48, EXEC, v:1, k:ed@soma, mode:FULL, rate:0, size:102
+2026-06-06 21:24:25, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:24:25, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:28:21, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:33:25, EXEC, v:1, k:ed@soma, mode:FULL, rate:28, size:111
+2026-06-06 21:33:24, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:33:41, EXEC, v:1, k:ed@soma, mode:FULL, rate:0, size:106
+2026-06-06 21:33:55, EXEC, v:1, k:ed@soma, mode:FULL, rate:14, size:106
+2026-06-06 21:33:53, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:35:07, EXEC, v:1, k:ed@soma, mode:FULL, rate:42, size:111
+2026-06-06 21:35:53, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:35:53, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:42:38, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:44:05, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:45:44, EXEC, v:1, k:ed@soma, mode:FULL, rate:0, size:123
+2026-06-06 21:45:52, EXEC, v:1, k:ed@soma, mode:FULL, rate:0, size:123
+2026-06-06 21:45:59, EXEC, v:1, k:ed@soma, mode:FULL, rate:0, size:123
+2026-06-06 21:47:08, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:47:08, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:49:24, EXEC, v:1, k:ed@soma, mode:FULL, size:120, fail:COMP
+2026-06-06 21:49:43, EXEC, v:1, k:ed@soma, mode:FULL, rate:42, size:120
+2026-06-06 21:50:01, EXEC, v:1, k:ed@soma, mode:FULL, rate:71, size:120
+2026-06-06 21:50:58, EXEC, v:1, k:ed@soma, mode:FULL, rate:100, size:120
+2026-06-06 21:51:04, MOVE, v:1, k:ed@soma, mode:BACK
+2026-06-06 21:51:20, SELF, v:1, k:ed@soma, self:1, rate:100, study:45
+2026-06-06 21:51:20, MOVE, v:1, k:ed@soma, mode:PICK
+2026-06-06 21:51:22, MOVE, v:1, k:ed@soma, mode:BACK
+2026-06-06 21:51:31, MOVE, v:1, k:ed@altura, mode:DOWN
+2026-06-06 21:50:57, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-06-06 21:51:31, MOVE, v:1, k:ed@altura, mode:EDIT
+2026-06-06 21:51:31, MOVE, v:1, k:ed@altura, mode:EDIT
+2026-06-06 21:51:31, MOVE, v:1, k:ed@altura, mode:EDIT
+2026-06-06 21:51:31, MOVE, v:1, k:ed@altura, mode:EDIT
+2026-06-06 21:51:31, MOVE, v:1, k:ed@altura, mode:EDIT
+2026-06-06 21:51:31, MOVE, v:1, k:ed@altura, mode:EDIT

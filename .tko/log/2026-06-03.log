@@ -1,0 +1,38 @@
+2026-06-03 14:17:07, MOVE, v:1, k:ed@inverter, mode:PICK
+2026-06-03 14:17:08, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16, size:72
+2026-06-03 14:17:09, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16
+2026-06-03 14:17:09, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16
+2026-06-03 14:17:10, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16
+2026-06-03 14:17:10, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16
+2026-06-03 14:17:10, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16
+2026-06-03 14:17:10, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16
+2026-06-03 14:17:10, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16
+2026-06-03 14:17:11, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16
+2026-06-03 14:19:32, EXEC, v:1, k:ed@inverter, mode:FULL, rate:33, size:75
+2026-06-03 14:21:23, MOVE, v:1, k:ed@inverter, mode:EDIT
+2026-06-03 14:21:44, EXEC, v:1, k:ed@inverter, mode:FULL, rate:0, size:77
+2026-06-03 14:22:24, EXEC, v:1, k:ed@inverter, mode:FULL, rate:100, size:78
+2026-06-03 14:23:14, EXEC, v:1, k:ed@inverter, mode:FULL, rate:100, size:78
+2026-06-03 14:23:17, MOVE, v:1, k:ed@inverter, mode:BACK
+2026-06-03 14:23:33, SELF, v:1, k:ed@inverter, self:1, rate:100, study:10
+2026-06-03 14:23:39, MOVE, v:1, k:ed@clonar, mode:DOWN
+2026-06-03 14:23:39, MOVE, v:1, k:ed@clonar, mode:EDIT
+2026-06-03 14:23:39, MOVE, v:1, k:ed@clonar, mode:EDIT
+2026-06-03 14:23:39, MOVE, v:1, k:ed@clonar, mode:EDIT
+2026-06-03 14:42:40, MOVE, v:1, k:ed@clonar, mode:PICK
+2026-06-03 14:42:41, EXEC, v:1, k:ed@clonar, mode:FULL, rate:0, size:82
+2026-06-03 14:42:52, EXEC, v:1, k:ed@clonar, mode:FULL, rate:33, size:74
+2026-06-03 14:42:51, MOVE, v:1, k:ed@clonar, mode:EDIT
+2026-06-03 14:47:24, MOVE, v:1, k:ed@clonar, mode:EDIT
+2026-06-03 14:50:09, EXEC, v:1, k:ed@clonar, mode:FULL, rate:100, size:82
+2026-06-03 14:50:11, MOVE, v:1, k:ed@clonar, mode:BACK
+2026-06-03 14:50:39, SELF, v:1, k:ed@clonar, self:1, rate:100
+2026-06-03 14:50:40, MOVE, v:1, k:ed@clonar, mode:PICK
+2026-06-03 14:50:40, EXEC, v:1, k:ed@clonar, mode:FULL, rate:100
+2026-06-03 14:50:41, EXEC, v:1, k:ed@clonar, mode:FULL, rate:100
+2026-06-03 14:50:41, EXEC, v:1, k:ed@clonar, mode:FULL, rate:100
+2026-06-03 14:50:41, EXEC, v:1, k:ed@clonar, mode:FULL, rate:100
+2026-06-03 14:50:41, EXEC, v:1, k:ed@clonar, mode:FULL, rate:100
+2026-06-03 14:50:41, EXEC, v:1, k:ed@clonar, mode:FULL, rate:100
+2026-06-03 14:50:42, EXEC, v:1, k:ed@clonar, mode:FULL, rate:100
+2026-06-03 14:50:42, MOVE, v:1, k:ed@clonar, mode:BACK
