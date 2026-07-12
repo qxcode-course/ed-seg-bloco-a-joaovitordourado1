@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-09_01-23-14",
+            "content": "@@ -1,51 +1,103 @@\n-package main%0A%0Aimport (%0A%09%22fmt%22%0A%09%22go/format%22%0A)%0A%0A%0A\n+@@ -10,1009 +10,21 @@%0A ain%250A%0A-%250A%0A import %0A-(%250A%2509%0A %2522fmt%2522%250A%0A-%2509%2522go/format%2522%250A)%250A%250A%250A\n type\n@@ -107,18 +107,22 @@\n r struct\n-%7B%0A\n+%257B%250A\n     l in\n@@ -122,17 +122,19 @@\n    l int\n-%0A\n+%250A\n     c in\n@@ -138,12 +138,20 @@\n  int\n-%0A%7D%0A%0A\n+%250A%257D%250A%250A\n func\n@@ -167,26 +167,40 @@\n rid \n-%5B%5D%5B%5Dint)int%7B%0A\n+int%255B%255D%255B%255D)int%257B%250A\n     \n-%0A\n+%250A\n     \n@@ -214,17 +214,19 @@\n en(grid)\n-%0A\n+%250A\n     co:=\n@@ -238,36 +238,56 @@\n grid\n-%5B0%5D)%0A    %0A%0A    qu:= %5B%5Dpos%7B%7D%0A\n+%255B0%255D)%250A    %250A%250A    qu:= %255B%255Dpos%257B%257D%250A\n     \n@@ -292,18 +292,22 @@\n   fr :=0\n-%0A%0A\n+%250A%250A\n     for \n@@ -320,18 +320,24 @@\n ; i \n-%3C\n+%253C\n  ; i++ \n-%7B%0A\n+%257B%250A\n     \n@@ -354,17 +354,19 @@\n := 0; j \n-%3C\n+%253C\n  co; j++\n@@ -366,18 +366,22 @@\n co; j++ \n-%7B%0A\n+%257B%250A\n         \n@@ -395,19 +395,31 @@\n grid\n-%5Bi%5D%5Bj%5D==2%7B%0A\n+%255Bi%255D%255Bj%255D==2%257B%250A\n     \n@@ -451,27 +451,33 @@\n ,pos\n-%7B\n+%257B\n l:i,c:j\n-%7D)%0A\n+%257D)%250A\n         \n %7Dels\n@@ -472,17 +472,19 @@\n         \n-%7D\n+%257D\n else if \n@@ -491,20 +491,32 @@\n grid\n-%5Bi%5D%5Bj%5D ==0%7B%0A\n+%255Bi%255D%255Bj%255D ==0%257B%250A\n     \n@@ -527,25 +527,27 @@\n     fr++\n-%0A\n+%250A\n         \n %7D%0A      \n@@ -542,18 +542,22 @@\n     \n-%7D%0A\n+%257D%250A\n         \n %7D%0A  \n@@ -556,16 +556,24 @@\n     \n-%7D%0A    %7D%0A\n+%257D%250A    %257D%250A\n     \n@@ -584,17 +584,19 @@\n len(qu) \n-%3E\n+%253E\n  0 && fr\n@@ -600,13 +600,19 @@\n  fr \n-%3E 0%7B%0A\n+%253E 0%257B%250A\n     \n@@ -637,17 +637,19 @@\n  len(qu)\n-%0A\n+%250A\n         \n@@ -662,17 +662,19 @@\n := 0; i \n-%3C\n+%253C\n  tamanho\n@@ -683,18 +683,22 @@\n te; i++ \n-%7B%0A\n+%257B%250A\n         \n@@ -713,20 +713,26 @@\n ac := qu\n-%5B0%5D%0A\n+%255B0%255D%250A\n         \n@@ -750,13 +750,19 @@\n =qu \n-%5B1:%5D%0A\n+%255B1:%255D%250A\n     \n@@ -806,14 +806,26 @@\n oes \n-%7B%0A%09%09%09%09\n+%257B%250A%2509%2509%2509%2509\n     \n@@ -850,16 +850,30 @@\n  dir\n-%5B0%5D%0A%09%09%09%09\n+%255B0%255D%250A%2509%2509%2509%2509\n     \n@@ -898,12 +898,18 @@\n  dir\n-%5B1%5D%0A\n+%255B1%255D%250A\n     \n@@ -933,17 +933,19 @@\n f novaL \n-%3E\n+%253E\n = 0 && n\n@@ -949,17 +949,19 @@\n & novaL \n-%3C\n+%253C\n  li && n\n@@ -969,9 +969,11 @@\n vaC \n-%3E\n+%253E\n = 0 \n@@ -985,9 +985,11 @@\n vaC \n-%3C\n+%253C\n  co \n@@ -999,29 +999,41 @@\n grid\n-%5B\n+%255B\n novaL\n-%5D%5B\n+%255D%255B\n novaC\n-%5D\n+%255D\n  == 1\n-%7B%0A\n+%257B%250A\n     \n@@ -1060,27 +1060,37 @@\n grid\n-%5B\n+%255B\n novaL\n-%5D%5B\n+%255D%255B\n novaC\n-%5D\n+%255D\n  = 2\n-%0A\n+%250A\n     \n@@ -1114,17 +1114,19 @@\n    fr --\n-%0A\n+%250A\n         \n@@ -1160,17 +1160,19 @@\n (qu, cor\n-%7B\n+%257B\n l: novaL\n@@ -1185,11 +1185,15 @@\n ovaC\n-%7D)%0A\n+%257D)%250A\n     \n@@ -1212,11 +1212,17 @@\n     \n-%7D%0A%0A\n+%257D%250A%250A\n     \n@@ -1246,15 +1246,21 @@\n os++\n-%0A\n+%250A\n     \n-%7D%0A\n+%257D%250A\n     \n@@ -1277,61 +1277,27 @@\n utos\n-%0A\n+%250A\n     \n-%0A%7D%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)%0A%7D\n+%250A%257D%250A%0A func\n %0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-07-09_15-00-30",
+            "content": "@@ -212,18 +212,16 @@\n  0; i %3C \n-li\n ; i++ %7B%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-09_15-00-39",
+            "content": "@@ -1009,22 +1009,16 @@\n %0A    %0A%7D%0A\n-    %7D%0A\n func mai\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-09_15-00-54",
+            "content": "@@ -174,19 +174,19 @@\n  qu:= %5B%5D\n-cor\n+pos\n %7B%7D%0A    f\n@@ -316,19 +316,19 @@\n pend(qu,\n-cor\n+pos\n %7Bl:i,c:j\n@@ -557,16 +557,17 @@\n       qu\n+:\n =qu %5B1:%5D\n@@ -632,17 +632,20 @@\n vaL := a\n-c\n+tual\n .l + dir\n@@ -666,17 +666,20 @@\n vaC := a\n-c\n+tual\n .c + dir\n@@ -990,26 +990,8 @@\n %0A   \n-%0A    %0A%7D%0A    %7D%0A    \n  ret\n@@ -1002,16 +1002,27 @@\n minutos%0A\n+    %0A%7D%0A    \n %7D%0Afunc m\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-07-09_15-02-18",
+            "content": "@@ -360,17 +360,17 @@\n i%5D%5Bj%5D ==\n-1\n+0\n %7B%0A      \n@@ -410,80 +410,8 @@\n   %7D%0A\n-    minutos := 0%0A%09direcoes := %5B%5D%5B%5Dint%7B%7B-1, 0%7D, %7B1, 0%7D, %7B0, -1%7D, %7B0, 1%7D%7D%0A\n     \n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-07-09_15-03-09",
+            "content": "@@ -23,16 +23,29 @@\n %0A%09%22fmt%22%0A\n+%09%22go/format%22%0A\n )%0A%0A%0Atype\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-09_15-03-17",
+            "content": "@@ -1015,24 +1015,33 @@\n             \n+minutos++\n %0A    %7D%0A   %0A \n@@ -1046,26 +1046,16 @@\n %0A    %0A%7D%0A\n-minutos++%0A\n     %7D%0A  \n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-07-09_15-03-35",
+            "content": "@@ -76,22 +76,14 @@\n unc \n-orangesRotting\n+apodre\n (gri\n@@ -96,14 +96,17 @@\n int)\n- \n int\n- \n %7B\n+%0A    \n %0A   \n@@ -1057,39 +1057,8 @@\n   %7D%0A\n-    if fr %3E 0 %7B%0A%09%09return -1%0A%09%7D%0A\n     \n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-09_15-10-23",
+            "content": "@@ -22,48 +22,11 @@\n (%0A%09%22\n-bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A%09%22strings\n+fmt\n %22%0A)%0A\n@@ -1129,580 +1129,39 @@\n ) %7B%0A\n-%09scanner := bufio.NewScanner(os.Stdin)%0A%0A%09if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%09line := scanner.Text()%0A%0A%09var nl, nc int%0A%09fmt.Sscanf(line, %22%25d %25d%22, &nl, &nc)%0A%0A%09mat := make(%5B%5D%5B%5Dint, nl)%0A%0A%09for i := 0; i %3C nl; i++ %7B%0A%09%09scanner.Scan()%0A%09%09linhaAtual := scanner.Text()%0A%0A%09%09partes := strings.Fields(linhaAtual)%0A%09%09mat%5Bi%5D = make(%5B%5Dint, nc)%0A%0A%09%09for j := 0; j %3C nc; j++ %7B%0A%09%09%09valor, _ := strconv.Atoi(partes%5Bj%5D)%0A%09%09%09mat%5Bi%5D%5Bj%5D = valor%0A%09%09%7D%0A%09%7D%0A%0A%09resultado := orangesRotting(mat)%0A%09fmt.Println(resultado)%0A%7D%0A// professor tive que usar ia para ajudar a ler as entradas, peguei como ref a questaop anterior\n+    fmt.Println(%22Hello, World!%22)%0A%7D\n %0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-09_15-20-09",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\n\ntype cor struct{\n    l int\n    c int\n}\n\nfunc orangesRotting(grid [][]int) int {\n    li := len(grid)\n    co:= len(grid[0])\n    \n\n    qu:= []cor{}\n    fr :=0\n\n    for i := 0; i < li; i++ {\n        for j := 0; j < co; j++ {\n            if grid[i][j]==2{\n                qu =append(qu,cor{l:i,c:j})\n        }else if grid[i][j] ==1{\n            fr++\n        }\n        }\n    }\n    minutos := 0\n\tdirecoes := [][]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}\n    for len(qu) > 0 && fr > 0{\n        tamanhoLote := len(qu)\n        for i := 0; i < tamanhoLote; i++ {\n                ac := qu[0]\n                qu=qu [1:]\n                for _, dir := range direcoes {\n\t\t\t\t    novaL := ac.l + dir[0]\n\t\t\t\t    novaC := ac.c + dir[1]\n                    if novaL >= 0 && novaL < li && novaC >= 0 && novaC < co && grid[novaL][novaC] == 1{\n                        grid[novaL][novaC] = 2\n                        fr --\n                        qu = append(qu, cor{l: novaL, c: novaC})\n                    }\n\n                \n    }\n   \n    \n}\nminutos++\n    }\n    if fr > 0 {\n\t\treturn -1\n\t}\n     return minutos\n}\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\n\tmat := make([][]int, nl)\n\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tlinhaAtual := scanner.Text()\n\n\t\tpartes := strings.Fields(linhaAtual)\n\t\tmat[i] = make([]int, nc)\n\n\t\tfor j := 0; j < nc; j++ {\n\t\t\tvalor, _ := strconv.Atoi(partes[j])\n\t\t\tmat[i][j] = valor\n\t\t}\n\t}\n\n\tresultado := orangesRotting(mat)\n\tfmt.Println(resultado)\n}\n// professor tive que usar ia para ajudar a ler as entradas, peguei como ref a questaop anterior\n",
+            "lines": "91"
+        }
+    ]
+}

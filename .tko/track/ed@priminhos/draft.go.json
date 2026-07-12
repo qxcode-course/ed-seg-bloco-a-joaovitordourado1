@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-11_21-54-22",
+            "content": "@@ -72,345 +72,4 @@\n )%0A%7D%0A\n-func xx(k %5B%5Dint ,n int, atual int)%5B%5Dint%7B%0A    if len(k) == n%7B%0A        return k %0A    %7D%0A    if  epri(atual)%7B%0A        k = append(k,atual)%0A    %7D%0A    return xx(k,n,atual+1)%0A%7D%0Afunc epri(b int) bool%7B%0A    if b ==1%7B%0A        return false%0A    %7D%0A    for i:= 2; i*i%3C b; i++%7B%0A        if b%25i ==0%7B%0A            return false%0A        %7D%0A    %7D %0A    return true%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-12_01-31-40",
+            "content": "@@ -41,81 +41,35 @@\n     \n-p:=0%0A    v := %5B%5Dint%7B%7D%0A    fmt.Scan(&p)%0A    w:=xx(v,p,2)%0A    fmt.Println(w\n+fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-07-12_01-34-53",
+            "content": "@@ -102,70 +102,21 @@\n    f\n-or i:=0; i %3C len(w);i++%7B%0A        fmt.Printf(%22%25v ,%22,w%5Bi%5D)%0A    %7D\n+mt.Println(w)\n %0A%7D%0Af\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-07-12_01-36-47",
+            "content": "@@ -97,29 +97,8 @@\n ,2)%0A\n-    fmt.Println(%22%5B%22)%0A\n     \n@@ -127,30 +127,8 @@\n ++%7B%0A\n-        if i!=len(w)%7B%0A\n     \n@@ -163,71 +163,9 @@\n     \n-    %7D%0A        fmt.Printf(%22%25v%22,w%5Bi%5D)%0A    %7D%0A     fmt.Println(%22%5D%22)\n+%7D\n %0A%7D%0Af\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-07-12_01-38-27",
+            "content": "@@ -106,16 +106,18 @@\n mt.Print\n+ln\n (%22%5B%22)%0A  \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-12_01-38-38",
+            "content": "@@ -209,14 +209,8 @@\n    %7D\n-else %7B\n %0A   \n@@ -241,17 +241,16 @@\n %5D)%0A    %7D\n-%7D\n %0A     fm\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-12_01-39-00",
+            "content": "@@ -166,10 +166,8 @@\n n(w)\n--1\n %7B%0A  \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-12_01-40-00",
+            "content": "@@ -188,18 +188,18 @@\n intf(%22%25v\n-,\n  \n+,\n %22,w%5Bi%5D)%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-12_01-40-10",
+            "content": "@@ -523,16 +523,18 @@\n  i:= 2; \n+i*\n i%3C b; i+\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-12_01-40-20",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    p:=0\n    v := []int{}\n    fmt.Scan(&p)\n    w:=xx(v,p,2)\n    fmt.Print(\"[\")\n    for i:=0; i < len(w);i++{\n        if i!=len(w)-1{\n        fmt.Printf(\"%v, \",w[i])\n        }else {\n        fmt.Printf(\"%v\",w[i])\n    }}\n     fmt.Println(\"]\")\n}\nfunc xx(k []int ,n int, atual int)[]int{\n    if len(k) == n{\n        return k \n    }\n    if  epri(atual){\n        k = append(k,atual)\n    }\n    return xx(k,n,atual+1)\n}\nfunc epri(b int) bool{\n    if b ==1{\n        return false\n    }\n    for i:= 2; i< b; i++{\n        if b%i ==0{\n            return false\n        }\n    } \n    return true\n}\n",
+            "lines": "36"
+        }
+    ]
+}

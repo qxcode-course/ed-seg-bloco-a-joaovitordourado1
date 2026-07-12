@@ -6,35 +6,66 @@ import (
 	"os"
 	"strings"
 )
-type multiSet struct {
-	data []int
-	size int
-	capacity int
 
+type multiSet struct {
+	data     []int
+	size     int
+	capacity int
 }
+
 func NewmultiSet(v int) *multiSet {
-	return &multiSet{data: make([]int,v),
-	size: 0,
-	capacity: v,
+	return &multiSet{data: make([]int, v),
+		size:     0,
+		capacity: v,
 	}
 }
 func (s *multiSet) expand() {
-	if s.capacity ==0{
+	if s.capacity == 0 {
 		s.capacity = 1
-	}else{
-		s.capacity *=2
+	} else {
+		s.capacity *= 2
 	}
-	newData := make([]int,s.capacity )
+	newData := make([]int, s.capacity)
 	for i := 0; i < s.size; i++ {
 		newData[i] = s.data[i]
 	}
 	s.data = newData
 }
-func (s *multiSet) search(){
-	
+func (s *multiSet) search(b int) (bool, int) {
+	h := 0
+	for i := 0; i < s.size; i++ {
+		if b == s.data[i] {
+			h = i
+		}
+	}
+	if h == 0 {
+		return false, -1
+	}
+	return true, h
 }
+func (s *multiSet) Insert(v int) {
+	aux := 0
+	aux1 := -1
 
-
+	for i := 0; i < s.size; i++ {
+		if s.data[i] >= v {
+			aux = s.data[i]
+			aux1 = i
+			s.data[i] = v
+			break
+		}
+	}
+	if aux1 != -1 {
+		for i := aux1 + 1; i < s.size; i++ {
+			temp := s.data[i]
+			s.data[i] = aux
+			aux = temp
+		}
+	} else {
+		s.data[s.size]++
+	}
+	s.size++
+}
 
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
