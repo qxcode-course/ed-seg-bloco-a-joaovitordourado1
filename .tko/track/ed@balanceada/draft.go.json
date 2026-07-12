@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-12_15-20-48",
+            "content": "package main\nimport \"fmt\"\ntype deque struct{\n    elements[]rune \n}\n\n\nfunc(d *deque )pushBack(i rune) {\n    d.elements = append(d.elements,i)\n}\nfunc(d *deque)popBack()(rune){\n    i := len(d.elements)-1\n    x := d.elements[i]\n    d.elements = d.elements[:i]\n    return x\n}\nfunc tabal(s []rune) bool{\n    d := deque {}\n    for _, c := range s{\n        if c =='(' || c == '['{\n            d.pushBack(c)\n        }else if c == ')' || c == ']'{\n            if len(d.elements)== 0{\n                return false \n            }\n            t:=d.popBack()\n            if (c == ')' && t!= '(')||(c == ']' && t!= '['){\n                return false\n            }\n        }\n    }\n\n    return len(d.elements) == 0\n}\nfunc main() {\n    in := \"\"\n    fmt.Scan(&in)\n    k := []rune(in)\n    if tabal(k){\n        fmt.Println(\"balanceado\")\n    }else{\n        fmt.Println(\"nao balanceado\")\n    }\n    \n}\n",
+            "lines": "45"
+        }
+    ]
+}

@@ -14,12 +14,32 @@ func(d *deque)popBack()(rune){
     d.elements = d.elements[:i]
     return x
 }
-func tabal([]rune) bool{
-    d := Deque {}
+func tabal(s []rune) bool{
+    d := deque {}
+    for _, c := range s{
+        if c =='(' || c == '['{
+            d.pushBack(c)
+        }else if c == ')' || c == ']'{
+            if len(d.elements)== 0{
+                return false 
+            }
+            t:=d.popBack()
+            if (c == ')' && t!= '(')||(c == ']' && t!= '['){
+                return false
+            }
+        }
+    }
 
-
-
+    return len(d.elements) == 0
 }
 func main() {
-    k:= []rune
+    in := ""
+    fmt.Scan(&in)
+    k := []rune(in)
+    if tabal(k){
+        fmt.Println("balanceado")
+    }else{
+        fmt.Println("nao balanceado")
+    }
+    
 }

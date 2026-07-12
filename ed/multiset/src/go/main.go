@@ -2,8 +2,10 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -31,6 +33,37 @@ func (s *multiSet) expand() {
 	}
 	s.data = newData
 }
+func (s *multiSet) Contains(b int) bool {
+	for i := 0; i < s.size; i++ {
+		if s.data[i] == b {
+			return true
+		}
+	}
+	return false
+
+}
+func (s *multiSet) Count(b int) int {
+	cont := 0
+	for i := 0; i < s.size; i++ {
+		if s.data[i] == b {
+			cont++
+		}
+	}
+	return cont
+
+}
+func (s *multiSet) Unique() int {
+	u := make(map[int]bool)
+	for i := 0; i < s.size; i++ {
+		u[s.data[i]] = true
+	}
+	return len(u)
+}
+
+func (s *multiSet) Clear(){
+	s.size =0
+}
+
 func (s *multiSet) search(b int) (bool, int) {
 	h := 0
 	for i := 0; i < s.size; i++ {
@@ -44,6 +77,9 @@ func (s *multiSet) search(b int) (bool, int) {
 	return true, h
 }
 func (s *multiSet) Insert(v int) {
+	if s.size == s.capacity {
+        s.expand()
+    }
 	aux := 0
 	aux1 := -1
 
@@ -56,15 +92,46 @@ func (s *multiSet) Insert(v int) {
 		}
 	}
 	if aux1 != -1 {
-		for i := aux1 + 1; i < s.size; i++ {
+		for i := aux1 + 1; i <=s.size; i++ {
 			temp := s.data[i]
 			s.data[i] = aux
 			aux = temp
 		}
 	} else {
-		s.data[s.size]++
+		s.data[s.size]=v
 	}
 	s.size++
+}
+func (s *multiSet) insert(v int, index int) error {
+	for i := s.size; i > index; i-- {
+		s.data[i] = s.data[i-1]
+	}
+	s.data[index] = v
+	s.size++
+	return nil
+}
+func (s *multiSet) Erase(v int) error {
+	for i := 0; i < s.size; i++ {
+		if s.data[i] == v {
+			for j := i; j < s.size-1; j++ {
+                s.data[j] = s.data[j+1]
+            }
+			s.size--
+			return nil
+		}
+	}
+	return errors.New("value not found")
+
+}
+func (s *multiSet) erase(v int, index int) error {
+	if index < 0 || index >= s.size {
+		return errors.New("índice fora dos limites")
+	}
+	for i := index; i < s.size-1; i++ {
+		s.data[i] = s.data[i+1]
+	}
+	s.size--
+	return nil
 }
 
 func Join(slice []int, sep string) string {
@@ -81,7 +148,7 @@ func Join(slice []int, sep string) string {
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
-	// ms := NewMultiSet(0)
+	ms := NewmultiSet(0)
 
 	for scanner.Scan() {
 		fmt.Print("$")
@@ -97,23 +164,34 @@ func main() {
 		case "end":
 			return
 		case "init":
-			// value, _ := strconv.Atoi(args[1])
-			// ms = NewMultiSet(value)
+			value, _ := strconv.Atoi(args[1])
+			ms = NewmultiSet(value)
 		case "insert":
-			// for _, part := range args[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// }
+			for _, part := range args[1:] {
+				value, _ := strconv.Atoi(part)
+				ms.Insert(value)
+			}
 		case "show":
+			fmt.Printf("[%s]\n", Join(ms.data[:ms.size], ", "))
 		case "erase":
-			// value, _ := strconv.Atoi(args[1])
+			value, _ := strconv.Atoi(args[1])
+			err := ms.Erase(value)
+            if err != nil {
+                fmt.Println(err)
+            }
 		case "contains":
-			// value, _ := strconv.Atoi(args[1])
+			value, _ := strconv.Atoi(args[1])
+			fmt.Println(ms.Contains(value))
 		case "count":
-			// value, _ := strconv.Atoi(args[1])
+			value, _ := strconv.Atoi(args[1])
+            fmt.Println(ms.Count(value))
 		case "unique":
+			fmt.Println(ms.Unique())
 		case "clear":
+			ms.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
 	}
 }
+// tive que dar uma alterada na main, usei ia para isso pois nao tinha conhecimento da lib de conversao

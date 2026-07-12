@@ -98,11 +98,21 @@ func (v *Vector) Erase(id int) error {
 	v.size--
 	return nil
 }
-// func (v *Vector) Slice(s int, e int) *Vector{
-// 	for i:= s; i < e; i++{
-		
-// 	}
-// }
+func (v *Vector) Slice(s int, e int) *Vector{
+	k:=(s%v.size+v.size)%v.size
+	p:=(e%v.size+v.size)%v.size
+	f:= v.data[k:p]
+	if k>p{
+		p = v.size
+	}
+	return &Vector{
+		data : f,
+		size : len(f),
+		capacity : cap(f),
+	}
+
+
+}
 func (v *Vector) Insert(n int, va int) error {
 	if v.size == v.capacity {
 		v.Reserve(v.capacity*2)
@@ -231,10 +241,10 @@ func main() {
 			newCapacity, _ := strconv.Atoi(parts[1])
 			v.Reserve(newCapacity)
 		case "slice":
-			// start, _ := strconv.Atoi(parts[1])
-			// end, _ := strconv.Atoi(parts[2])
-			// slice := v.Slice(start, end)
-			// fmt.Println(slice)
+			start, _ := strconv.Atoi(parts[1])
+			end, _ := strconv.Atoi(parts[2])
+			slice := v.Slice(start, end)
+			fmt.Println(slice)
 		default:
 			fmt.Println("fail: comando invalido")
 		}

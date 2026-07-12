@@ -19,10 +19,12 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@dfs
 - ed@bfs
-- ed@vector
+- ed@dfs
 - ed@tree
+- ed@rec
+- ed@vector
+- ed@linear
 flags:
   inbox: all
   panel: skills
@@ -32,5 +34,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@vetbuild
-selected_index: 4
+selected: ed@arvore-path
+selected_index: 55

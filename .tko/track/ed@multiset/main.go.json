@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-12_02-28-19",
+            "content": "@@ -1783,20 +1783,8 @@\n = 0%0A\n-%09%09%09s.size--%0A\n %09%09%09r\n@@ -1825,23 +1825,22 @@\n w(%22 \n-value not found\n+deu ruim chefe\n %22)%0A%0A\n",
+            "lines": "197"
+        },
+        {
+            "label": "2026-07-12_02-30-17",
+            "content": "@@ -1769,93 +1769,21 @@\n %0A%09%09%09\n-for j := i; j %3C s.size-1; j++ %7B%0A                \n s.data%5B\n-j\n+i\n %5D = \n-s.data%5Bj+1%5D%0A            %7D\n+0\n %0A%09%09%09\n",
+            "lines": "198"
+        },
+        {
+            "label": "2026-07-12_02-32-12",
+            "content": "@@ -1904,16 +1904,17 @@\n rs.New(%22\n+ \n value no\n",
+            "lines": "200"
+        },
+        {
+            "label": "2026-07-12_02-32-24",
+            "content": "@@ -903,18 +903,53 @@\n ()%7B%0A\n-%09s.size =0\n+%0Afor i := 0; i %3C s.size; i++ %7B%0A%09s.data%5Bi%5D=0%0A%7D\n %0A%7D%0A%0A\n",
+            "lines": "200"
+        },
+        {
+            "label": "2026-07-12_02-32-50",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"errors\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype multiSet struct {\n\tdata     []int\n\tsize     int\n\tcapacity int\n}\n\nfunc NewmultiSet(v int) *multiSet {\n\treturn &multiSet{data: make([]int, v),\n\t\tsize:     0,\n\t\tcapacity: v,\n\t}\n}\nfunc (s *multiSet) expand() {\n\tif s.capacity == 0 {\n\t\ts.capacity = 1\n\t} else {\n\t\ts.capacity *= 2\n\t}\n\tnewData := make([]int, s.capacity)\n\tfor i := 0; i < s.size; i++ {\n\t\tnewData[i] = s.data[i]\n\t}\n\ts.data = newData\n}\nfunc (s *multiSet) Contains(b int) bool {\n\tfor i := 0; i < s.size; i++ {\n\t\tif s.data[i] == b {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n\n}\nfunc (s *multiSet) Count(b int) int {\n\tcont := 0\n\tfor i := 0; i < s.size; i++ {\n\t\tif s.data[i] == b {\n\t\t\tcont++\n\t\t}\n\t}\n\treturn cont\n\n}\nfunc (s *multiSet) Unique() int {\n\tu := make(map[int]bool)\n\tfor i := 0; i < s.size; i++ {\n\t\tu[s.data[i]] = true\n\t}\n\treturn len(u)\n}\n\nfunc (s *multiSet) Clear(){\n\ts.size =0\n}\n\nfunc (s *multiSet) search(b int) (bool, int) {\n\th := 0\n\tfor i := 0; i < s.size; i++ {\n\t\tif b == s.data[i] {\n\t\t\th = i\n\t\t}\n\t}\n\tif h == 0 {\n\t\treturn false, -1\n\t}\n\treturn true, h\n}\nfunc (s *multiSet) Insert(v int) {\n\tif s.size == s.capacity {\n        s.expand()\n    }\n\taux := 0\n\taux1 := -1\n\n\tfor i := 0; i < s.size; i++ {\n\t\tif s.data[i] >= v {\n\t\t\taux = s.data[i]\n\t\t\taux1 = i\n\t\t\ts.data[i] = v\n\t\t\tbreak\n\t\t}\n\t}\n\tif aux1 != -1 {\n\t\tfor i := aux1 + 1; i <=s.size; i++ {\n\t\t\ttemp := s.data[i]\n\t\t\ts.data[i] = aux\n\t\t\taux = temp\n\t\t}\n\t} else {\n\t\ts.data[s.size]=v\n\t}\n\ts.size++\n}\nfunc (s *multiSet) insert(v int, index int) error {\n\tfor i := s.size; i > index; i-- {\n\t\ts.data[i] = s.data[i-1]\n\t}\n\ts.data[index] = v\n\ts.size++\n\treturn nil\n}\nfunc (s *multiSet) Erase(v int) error {\n\tfor i := 0; i < s.size; i++ {\n\t\tif s.data[i] == v {\n\t\t\tfor j := i; j < s.size-1; j++ {\n                s.data[j] = s.data[j+1]\n            }\n\t\t\ts.size--\n\t\t\treturn nil\n\t\t}\n\t}\n\treturn errors.New(\"value not found\")\n\n}\nfunc (s *multiSet) erase(v int, index int) error {\n\tif index < 0 || index >= s.size {\n\t\treturn errors.New(\"\u00edndice fora dos limites\")\n\t}\n\tfor i := index; i < s.size-1; i++ {\n\t\ts.data[i] = s.data[i+1]\n\t}\n\ts.size--\n\treturn nil\n}\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tresult := fmt.Sprintf(\"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tresult += sep + fmt.Sprintf(\"%d\", value)\n\t}\n\treturn result\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\tms := NewmultiSet(0)\n\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = args[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tms = NewmultiSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range args[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tms.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Printf(\"[%s]\\n\", Join(ms.data[:ms.size], \", \"))\n\t\tcase \"erase\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\terr := ms.Erase(value)\n            if err != nil {\n                fmt.Println(err)\n            }\n\t\tcase \"contains\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tfmt.Println(ms.Contains(value))\n\t\tcase \"count\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n            fmt.Println(ms.Count(value))\n\t\tcase \"unique\":\n\t\t\tfmt.Println(ms.Unique())\n\t\tcase \"clear\":\n\t\t\tms.Clear()\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n// tive que dar uma alterada na main, usei ia para isso pois nao tinha conhecimento da lib de conversao\n",
+            "lines": "197"
+        }
+    ]
+}
