@@ -19,12 +19,13 @@ sources:
   writeable: false
   quests: null
 expanded:
+- ed@backtrack
+- ed@linear
+- ed@tree
 - ed@bfs
 - ed@dfs
-- ed@tree
 - ed@rec
 - ed@vector
-- ed@linear
 flags:
   inbox: all
   panel: skills
@@ -34,5 +35,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@arvore-path
-selected_index: 55
+selected: ed@bst_serial
+selected_index: 63

@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-12_20-05-13",
+            "content": "@@ -262,267 +262,14 @@\n %7B%0A%09%09\n-if value %3C ac.Value%7B%0A%09%09%09if ac.Left == nil%7B%0A%09%09%09%09ac.Left = &Node%7BValue : value%7D%0A%09%09%09%09break%0A%09%09%09%7Delse if value %3E ac.Value%7B%0A%09%09%09%09if ac.Right == nil%7B%0A%09%09%09%09%09ac.Right = &Node%7BValue : value%7D%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%09ac = ac.Right%0A%09%09%09%7Delse%7B%0A%09%09%09%09break%0A%09%09%09%7D%0A%0A%09%09%7D%0A%0A%0A%0A%09%7D%0A%09return k\n+%0A%0A%0A%0A%09%7D\n %0A%7D%0A%09\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-07-12_20-10-49",
+            "content": "@@ -242,19 +242,8 @@\n ue%7D%0A\n-%09%09continue%0A\n %09%7D%0A%09\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-07-12_20-11-48",
+            "content": "@@ -524,12 +524,30 @@\n %09%7D%0A%09\n-%0A%7D%0A%09\n+return k%0A%7D%0A%09_ = values\n %0A%09re\n@@ -551,17 +551,19 @@\n %09return \n-k\n+nil\n %0A%7D%0A%0A// -\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-07-12_20-13-22",
+            "content": "@@ -357,21 +357,16 @@\n %09%09break%0A\n-%09%09%09%7D%0A\n %09%09%09%7Delse\n@@ -508,16 +508,17 @@\n ak%0A%09%09%09%7D%0A\n+%0A\n %09%09%7D%0A%0A%0A%0A%09\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-07-12_20-14-07",
+            "content": "@@ -523,16 +523,22 @@\n %7D%0A%0A%0A%0A%09%7D%0A\n+%09%0A%7D%0A%09%0A\n %09return \n@@ -543,16 +543,9 @@\n n k%0A\n-%09%0A%7D%0A%09%0A%09%0A\n+%7D\n %0A%0A//\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-07-12_20-14-40",
+            "content": "@@ -361,30 +361,13 @@\n eak%0A\n-%0A\n %09%09%09%7D%0A\n-%09%09%09ac = ac.Left%0A\n %09%09%09%7D\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-07-12_20-15-24",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\nfunc BstInsert(values []int) *Node {\n\tvar k *Node\n\tfor _,value :=range values{\n\tif k == nil{\n\t\tk=&Node{Value:value}\n\t\tcontinue\n\t}\n\tac := k\n\tfor{\n\t\tif value < ac.Value{\n\t\t\tif ac.Left == nil{\n\t\t\t\tac.Left = &Node{Value : value}\n\t\t\t\tbreak\n\n\t\t\t}\n\t\t\tac = ac.Left\n\t\t\t}else if value > ac.Value{\n\t\t\t\tif ac.Right == nil{\n\t\t\t\t\tac.Right = &Node{Value : value}\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t\tac = ac.Right\n\t\t\t}else{\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\n\n\t}\n\treturn k\n\t\n}\n\t\n\t\n\n\n// -----------------------------------------------------------------------------------\nfunc BShow(node *Node, history string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, history+\"l\")\n\t}\n\tfor i := 0; i < len(history)-1; i++ {\n\t\tif history[i] != history[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif history != \"\" {\n\t\tif history[len(history)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, history+\"r\")\n\t}\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tvalues := make([]int, 0, len(parts))\n\tfor _, elem := range parts {\n\t\tv, err := strconv.Atoi(elem)\n\t\tif err == nil {\n\t\t\tvalues = append(values, v)\n\t\t}\n\t}\n\troot := BstInsert(values)\n\tBShow(root, \"\") // Chama a fun\u00e7\u00e3o de impress\u00e3o formatada\n}\n",
+            "lines": "96"
+        }
+    ]
+}

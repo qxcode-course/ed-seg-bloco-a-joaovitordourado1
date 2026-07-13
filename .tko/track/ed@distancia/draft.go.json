@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-12_20-39-36",
+            "content": "@@ -1,47 +1,32 @@\n-package main%0Aimport %22fmt%22%0A%0Afunc aux(a%5B%5D\n+@@ -40,407 +40,11 @@%0A \n byte\n+%0A-\n ,id,\n@@ -41,26 +41,30 @@\n ar byte)bool\n-%7B%0A\n+%257B%250A\n     for i :=\n@@ -65,33 +65,35 @@\n r i := 0; i \n-%3C\n+%253C\n  L; i++ \n %7B%0A        if\n@@ -72,34 +72,38 @@\n 0; i %253C L; i++ \n-%7B%0A\n+%257B%250A\n         if id-i%3E\n@@ -105,31 +105,41 @@\n id-i\n-%3E\n+%253E\n =0 && a\n-%5B\n+%255B\n id-i\n-%5D\n+%255D\n == char\n-%7B%0A\n+%257B%250A\n     \n@@ -154,33 +154,35 @@\n return false\n-%0A\n+%250A\n         \n %7D%0A    %7D%0A    \n@@ -165,32 +165,40 @@\n e%250A        \n-%7D%0A    %7D%0A\n+%257D%250A    %257D%250A\n     for i :=\n@@ -207,17 +207,19 @@\n ; i \n-%3C\n+%253C\n  L; i++ \n %7B%0A  \n@@ -214,18 +214,22 @@\n  L; i++ \n-%7B%0A\n+%257B%250A\n         \n@@ -235,17 +235,19 @@\n  if id+i\n-%3C\n+%253C\n  len(a)&\n@@ -253,23 +253,31 @@\n && a\n-%5B\n+%255B\n id+i\n-%5D\n+%255D\n == char\n-%7B%0A\n+%257B%250A\n     \n@@ -296,25 +296,27 @@\n rn false\n-%0A\n+%250A\n         \n %7D%0A    %7D%0A\n@@ -307,24 +307,32 @@\n         \n-%7D%0A    %7D%0A\n+%257D%250A    %257D%250A\n     retu\n@@ -338,19 +338,25 @@\n urn true\n-%0A%7D%0A\n+%250A%257D%250A\n func bac\n@@ -363,10 +363,14 @@\n k(a \n-%5B%5D\n+%255B%255D\n byte\n@@ -382,18 +382,22 @@\n int)bool\n-%7B%0A\n+%257B%250A\n     if i\n@@ -406,18 +406,22 @@\n = len(a)\n-%7B%0A\n+%257B%250A\n         \n@@ -435,23 +435,29 @@\n true\n-%0A\n+%250A\n     \n-%7D%0A\n+%257D%250A\n     if a\n %5Bi%5D \n@@ -456,20 +456,28 @@\n if a\n-%5Bi%5D\n+%255Bi%255D\n  != '.'\n-%7B%0A\n+%257B%250A\n     \n@@ -504,237 +504,36 @@\n i+1)\n-%0A    %7D%0A    for d := 0; d %3C= L; d++%7B%0A        cd:= byte('0'+d)%0A        if aux(a,i,L,cd)%7B%0A            a%5Bi%5D=cd%0A%0A        %7D%0A        if back(a,L,i)%7B%0A            return true%0A        %7D%0A    %7D%0A%7D%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)%0A%7D\n+%250A    %257D%250A%257D%0A+ )%250A%0A %250Afun\n %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-12_20-53-18",
+            "content": "@@ -611,150 +611,57 @@\n     \n-    a%5Bi%5D= '.'%0A    %7D%0A    return false%0A%7D%0Afunc main() %7B%0A    s := %22%22%0A    L:=0%0A%0A    fmt.Scan(&s)%0A    fmt.Scan(&L)%0A%0A%0A    a:=%5B%5Dbyte(s)%0A    back(a,L,0\n+%7D%0A%7D%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-12_20-56-23",
+            "content": "@@ -755,33 +755,6 @@\n ,0)%0A\n-    fmt.Println(string(a))%0A\n %7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-07-12_20-56-42",
+            "content": "@@ -75,23 +75,22 @@\n or i := \n-1\n+0\n ; i %3C\n-=\n  L; i++ \n@@ -187,15 +187,15 @@\n  := \n-1\n+0\n ; i %3C\n-=\n+ \n L; i\n@@ -535,16 +535,26 @@\n %5Bi%5D=cd%0A%0A\n+        %7D%0A\n         \n@@ -607,29 +607,24 @@\n   %7D%0A        \n-     \n a%5Bi%5D= '.'%0A  \n@@ -621,26 +621,16 @@\n i%5D= '.'%0A\n-        %7D%0A\n     %7D%0A  \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-07-12_21-00-12",
+            "content": "package main\nimport \"fmt\"\n\nfunc aux(a[]byte,id,L int,char byte)bool{\n    for i := 1; i <= L; i++ {\n        if id-i>=0 && a[id-i]== char{\n            return false\n        }\n    }\n    for i := 1; i <=L; i++ {\n        if id+i< len(a)&& a[id+i]== char{\n            return false\n        }\n    }\n    return true\n}\nfunc back(a []byte,L,i int)bool{\n    if i == len(a){\n        return true\n    }\n    if a[i] != '.'{\n        return back(a,L,i+1)\n    }\n    for d := 0; d <= L; d++{\n        cd:= byte('0'+d)\n        if aux(a,i,L,cd){\n            a[i]=cd\n\n        if back(a,L,i){\n            return true\n        }\n             a[i]= '.'\n        }\n    }\n    return false\n}\nfunc main() {\n    s := \"\"\n    L:=0\n\n    fmt.Scan(&s)\n    fmt.Scan(&L)\n\n\n    a:=[]byte(s)\n    back(a,L,0)\n    fmt.Println(string(a))\n}\n",
+            "lines": "48"
+        }
+    ]
+}

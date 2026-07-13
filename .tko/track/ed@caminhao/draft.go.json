@@ -12,8 +12,28 @@
         },
         {
             "label": "2026-05-28_13-18-00",
-            "content": "package main\nimport \"fmt\"\n\n                                            \nfunc main() {\n    n:=0\n    fmt.Scan(&n)\n    vec:= make([]int,n*2)                                                     \n    for i := 0; i < n*2; i++ {\n        fmt.Scan(&vec[i])\n    }\n    fmt.Print(vec)\n    \n}\n",
-            "lines": "14"
+            "content": "@@ -1,107 +1,40 @@\n-package main%0Aimport %22fmt%22%0A%0A                                            %0Afunc main() %7B%0A    n:=0%0A\n+@@ -92,17 +92,8 @@%0A :=0%250A%0A-\n     k:=0\n %0A   \n@@ -33,173 +33,94 @@\n k:=0\n+%250A\n %0A    \n-fmt.Scan(&n)%0A    vec:= make(%5B%5Dint,n*2)                                                     %0A    for i := 0; i %3C n*2; i++ %7B%0A        fmt.Scan(&vec%5Bi%5D)%0A    %7D\n+ %0A@@ -105,16 +105,16 @@%0A can(&n)%250A%0A+%0A     vec:%0A@@ -256,194 +256,25 @@\n %0A    f\n+%0A-\n or i\n@@ -128,17 +128,19 @@\n := 0; i \n-%3C\n+%253C\n  n*2; i+\n@@ -141,18 +141,22 @@\n *2; i++ \n-%7B%0A\n+%257B%250A\n         \n@@ -165,24 +165,38 @@\n  vec\n-%5Bi%5D %3C vec%5Bi+1%5D%7B%0A\n+%255Bi%255D %253C vec%255Bi+1%255D%257B%250A\n     \n@@ -212,25 +212,27 @@\n ontinue \n-%0A\n+%250A\n         \n %7D%0A      \n@@ -219,26 +219,30 @@\n  %250A        \n-%7D%0A\n+%257D%250A\n         if v\n@@ -247,92 +247,157 @@\n  vec\n-%5Bi%5D %3E vec%5Bi+1%5D%7B%0A            k = vec%5Bi%5D - vec%5Bi+1%5D%0A        %7D%0A%0A    %7D%0A    fmt.Println(k)%0A%7D\n+%255Bi%255D %253E vec%255Bi+1%255D%257B%250A            k = vec%255Bi%255D - vec%255Bi+1%255D%250A        %257D%250A%250A    %257D%250A    fmt.Println(k)%0A+mt.Print(vec)%250A    %0A %250A%257D%250A\n %0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-07-12_21-07-51",
+            "content": "@@ -140,38 +140,19 @@\n nt,n\n+*2\n )     \n-%0A\n    \n- gas:= make(%5B%5Dint,n)\n     \n@@ -197,60 +197,8 @@\n    %0A\n-    in:=0%0A    ta:=0%0A    sg:=0                      %0A\n     \n@@ -210,24 +210,26 @@\n  := 0; i %3C n\n+*2\n ; i++ %7B%0A    \n@@ -246,16 +246,8 @@\n an(&\n-gas%5Bi%5D,&\n vec%5B\n@@ -277,21 +277,24 @@\n 0; i %3C n\n+*2\n ; i++\n+ \n %7B%0A      \n@@ -299,126 +299,125 @@\n     \n-sobra := gas\n+if vec\n %5Bi%5D \n--\n+%3C\n  vec%5Bi\n-%5D%0A        ta+= sobra%0A        sg +=sobra%0A        if ta%3E0%7B%0A            ta =0%0A            in = \n++1%5D%7B%0A            continue %0A        %7D%0A        if vec%5Bi%5D %3E vec%5Bi+1%5D%7B%0A            k = vec%5Bi%5D - vec%5B\n i+1\n+%5D\n %0A   \n@@ -419,24 +419,25 @@\n %5D%0A        %7D%0A\n+%0A\n     %7D%0A    if\n@@ -438,89 +438,21 @@\n     \n-if sg%3E=0%7B%0A        fmt.Println(in)    %7Delse%7B%0A            fmt.Println(%22-1%22)%0A        %7D\n+fmt.Println(k)%0A\n %7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-07-12_21-21-37",
+            "content": "@@ -84,24 +84,33 @@\n  %7B%0A    n:=0%0A\n+    k:=0%0A\n     fmt.Scan\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-07-12_21-21-49",
+            "content": "@@ -436,17 +436,17 @@\n    if ta\n-%3C\n+%3E\n 0%7B%0A     \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-07-12_21-22-22",
+            "content": "package main\nimport \"fmt\"\n\n                                            \nfunc main() {\n    n:=0\n    fmt.Scan(&n)\n    vec:= make([]int,n)     \n    gas:= make([]int,n)                                             \n    in:=0\n    ta:=0\n    sg:=0                      \n    for i := 0; i < n; i++ {\n        fmt.Scan(&gas[i],&vec[i])\n    }\n    for i := 0; i < n; i++{\n        sobra := gas[i] - vec[i]\n        ta+= sobra\n        sg +=sobra\n        if ta<0{\n            ta =0\n            in = i+1\n        }\n    }\n    if sg>=0{\n        fmt.Println(in)    }else{\n            fmt.Println(\"-1\")\n        }}\n",
+            "lines": "28"
         }
     ]
 }

@@ -47,9 +47,17 @@ func BstInsert(values []int) *Node {
 	return k
 	
 }
-	
-	
+// Dica: crie um vetor compartilhado e vá preenchendo conforme anda na recursão
+// Depois use o strings.Join para gerar o serial
+func Serialize(root *Node) string {
+	if root== nil{
+		return "#"
+	}
+	esq:=Serialize(root.Left)
+	rig:=Serialize(root.Right)
 
+	return fmt.Sprintf("%d %s %s", root.Value,esq,rig)
+}
 
 // -----------------------------------------------------------------------------------
 func BShow(node *Node, history string) {
@@ -93,4 +101,5 @@ func main() {
 	}
 	root := BstInsert(values)
 	BShow(root, "") // Chama a função de impressão formatada
+	fmt.Println(Serialize((root)))
 }
